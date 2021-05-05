@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">My Laundry</string>
+
+    <string name="email">Email</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="login">Login</string>
 </resources>
