@@ -134,7 +134,7 @@
         android:layout_margin="16dp">
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/lnkLogin"
+
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:layout_marginTop="20dp"
@@ -143,23 +143,16 @@
             android:gravity="center"
             android:textSize="20dp"
             android:textColor="#aaaaaa" />
-        <androidx.appcompat.widget.AppCompatButton
-            style="@style/Widget.AppCompat.Button.Borderless"
-            android:id = "@+id/Login_Button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/Login"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:text= "Login"
             android:gravity="center"
-            android:layout_marginBottom="30.5dp"
-            android:layout_marginTop="20.8dp"
-            android:layout_marginStart = "10dp"
-            android:background="@drawable/button_gradient_1"
-            android:textSize="12sp"
-
-            android:fontFamily="sans-serif-light"
-            android:textStyle="normal"
-            android:textColor="#000000"
-
-            android:text="Login"/>
+            android:textSize="20dp"
+            android:textColor="#aaaaaa" />
 
 
     </LinearLayout>
