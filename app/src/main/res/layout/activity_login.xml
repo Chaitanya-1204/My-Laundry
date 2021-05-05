@@ -139,18 +139,21 @@
                         android:text="@string/already_have_an_account"/>
 
                     <androidx.appcompat.widget.AppCompatButton
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:id = "@+id/Register_Button"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:layout_marginBottom="30.5dp"
                         android:layout_marginTop="20.8dp"
-                        android:background="@color/white"
-                        android:textSize="18sp"
-                        android:layout_marginStart="5dp"
+                        android:layout_marginStart = "10dp"
+                        android:background="@drawable/button_gradient_1"
+                        android:textSize="12sp"
+
                         android:fontFamily="sans-serif-light"
                         android:textStyle="normal"
                         android:textColor="#000000"
-                        android:lineSpacingExtra="26sp"
+
                         android:text="Register"/>
 
                 </LinearLayout>
