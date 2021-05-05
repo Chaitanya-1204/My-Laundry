@@ -1,5 +1,6 @@
 package com.example.mylaundry;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -9,8 +10,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+import android.widget.Toolbar;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
     private TextView Login ,banner , registerUser ;
@@ -72,6 +79,16 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             FullName.requestFocus();
             return;
         }
+        if(phone_number.isEmpty()){
+            Phone.setError("Phone Number is required is Required");
+            Phone.requestFocus();
+            return;
+        }
+        if(phone_number.length() != 10){
+            Phone.setError("Invalid Phone Number");
+            Phone.requestFocus();
+            return;
+        }
         if(email.isEmpty()){
             Email.setError("Email is Required");
             Email.requestFocus();
@@ -87,22 +104,32 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             Password.requestFocus();
             return;
         }
-        if(phone_number.isEmpty()){
-            Phone.setError("Phone Number is required is Required");
-            Phone.requestFocus();
-            return;
-        }
+
         if (password.length() < 6){
             Password.setError("Password must be 6 or more Character Long");
             Password.requestFocus();
             return;
 
         }
-        if(phone_number.length() != 10){
-            Phone.setError("Invalid Phone Number");
-            Phone.requestFocus();
-            return;
-        }
+        mAuth.createUserWithEmailAndPassword(email , password)
+                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if(task.isSuccessful()){
+                            Toast.makeText(RegisterActivity.this , "User Registered Succesfully" , Toast.LENGTH_LONG).show();
+                        }
+                        else{
+                            Toast.makeText(RegisterActivity.this , "Failed to Register" , Toast.LENGTH_LONG).show();
+                        }
+                    }
+                });
+
+
+
+
+
+
+
 
 
 
