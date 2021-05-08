@@ -27,4 +27,10 @@
 
     <color name="colorWhite">#FFFFFF</color>
     <color name="red">#ff0000</color>
+    <color name="light_sea_green">#31cb95</color>
+    <color name="white_smoke">#eff0f0</color>
+    <color name="silver">#c8c8c8</color>
+    <color name="orange">#f7991b</color>
+    <color name="dark_gray">#A9A9A9</color>
+    <color name="dark_late_gray">#2b3e50</color>
 </resources>
