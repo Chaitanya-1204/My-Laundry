@@ -5,4 +5,5 @@
     <string name="already_have_an_account">Already have an account?</string>
     <string name="login">Login</string>
     <string name="registration">Registration</string>
+    <string name="don_t_have_and_account_register_here">Don\'t have and account! Register Here</string>
 </resources>

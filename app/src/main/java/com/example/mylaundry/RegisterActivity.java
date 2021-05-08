@@ -51,10 +51,10 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         registerUser = (Button) findViewById(R.id.registerUser);
         registerUser.setOnClickListener(this);
 
-        FullName = (EditText) findViewById(R.id.fullName);
-        Phone = (EditText) findViewById(R.id.phoneNumber);
-        Email = (EditText) findViewById(R.id.email);
-        Password = (EditText) findViewById(R.id.password);
+        FullName = (EditText) findViewById(R.id.register_fullName);
+        Phone = (EditText) findViewById(R.id.register_phoneNumber);
+        Email = (EditText) findViewById(R.id.register_email);
+        Password = (EditText) findViewById(R.id.register_password);
 
 
 
@@ -75,9 +75,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             case R.id.Login:
                 startActivity(new Intent(this , LoginActivity.class));
                 break;
-            case R.id.banner:
-                startActivity(new Intent(this , LoginActivity.class));
-                break;
+
             case R.id.registerUser:
                 registeredUser();
                 break;
@@ -142,7 +140,8 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if(task.isSuccessful()){
-                                        Toast.makeText(RegisterActivity.this , "User Registered" , Toast.LENGTH_LONG).show();
+                                        Toast.makeText(RegisterActivity.this , "User Registered!!" , Toast.LENGTH_LONG).show();
+
                                     }
                                     else{
                                         Toast.makeText(RegisterActivity.this , "Failed to register! Try Again" , Toast.LENGTH_LONG).show();

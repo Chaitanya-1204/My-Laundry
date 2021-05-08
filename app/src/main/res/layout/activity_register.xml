@@ -18,12 +18,12 @@
 
 
         <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/fullName"
+            android:id="@+id/register_fullName"
             android:hint="Full Name"
             android:inputType="text"
             android:textColorHint="@color/gray"
             android:background="#00000000"
-            android:textSize="25sp"
+            android:textSize="30sp"
             android:fontFamily="sans-serif-light"
             android:textStyle="normal"
             android:textColor="@color/black"
@@ -42,12 +42,12 @@
         android:layout_marginEnd="16dp"
         />
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/phoneNumber"
+        android:id="@+id/register_phoneNumber"
         android:hint="Phone Number"
         android:inputType="phone"
         android:textColorHint="@color/gray"
         android:background="#00000000"
-        android:textSize="25sp"
+        android:textSize="30sp"
         android:fontFamily="sans-serif-light"
         android:textStyle="normal"
         android:textColor="#9391a4"
@@ -66,12 +66,13 @@
         android:layout_marginEnd="16dp"
         />
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/email"
+        android:id="@+id/register_email"
         android:hint="Email"
+        android:drawableStart="@drawable/launcher_email"
         android:inputType="textEmailAddress"
         android:textColorHint="@color/gray"
         android:background="#00000000"
-        android:textSize="25sp"
+        android:textSize="30sp"
         android:fontFamily="sans-serif-light"
         android:textStyle="normal"
         android:textColor="#9391a4"
@@ -91,13 +92,14 @@
         />
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/password"
+        android:id="@+id/register_password"
         android:hint="Password"
+        android:drawableStart="@drawable/launcher_password"
         android:inputType="textPassword"
-        android:drawableEnd="@drawable/view_password"
+
         android:textColorHint="@color/gray"
         android:background="#00000000"
-        android:textSize="25sp"
+        android:textSize="30sp"
         android:fontFamily="sans-serif-light"
         android:textStyle="normal"
         android:textColor="#9391a4"
@@ -124,32 +126,24 @@
         android:layout_width="185dp"
         android:layout_marginTop="25dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="100dp"
+        android:layout_marginStart="100dp"
         android:background="@drawable/button_gradient"
-        android:text="Register" />
+        android:text="Register"
+        android:textColor="@color/white"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_margin="16dp">
 
-        <androidx.appcompat.widget.AppCompatTextView
 
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="50dp"
-            android:text="Already Registered? "
-            android:gravity="center"
-            android:textSize="20dp"
-            android:textColor="#aaaaaa" />
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/Login"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:layout_marginTop="20dp"
-            android:layout_marginStart="20dp"
-            android:text= "Login"
+            android:layout_marginStart="60dp"
+            android:text= "Already Registered?   Login"
             android:gravity="center"
             android:textSize="20dp"
             android:textColor="#aaaaaa" />
