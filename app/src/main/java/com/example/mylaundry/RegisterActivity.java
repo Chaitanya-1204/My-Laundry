@@ -3,6 +3,7 @@ package com.example.mylaundry;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
@@ -20,12 +21,13 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.DatabaseReference;
 
+import java.util.Objects;
+
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
-    private TextView Login ,banner , registerUser ;
     private EditText FullName , Phone , Email , Password;
+    private ProgressDialog loadingBar;
 
     private FirebaseAuth mAuth;
-    private FirebaseDatabase dataBase;
     private DatabaseReference databaseReference;
     User userInfo = new User();
 
@@ -37,24 +39,22 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        Login = (TextView) findViewById(R.id.Login);
-        Login.setOnClickListener(this);
+        TextView login = (TextView) findViewById(R.id.Login);
+        login.setOnClickListener(this);
 
-        banner = (TextView) findViewById(R.id.banner);
-        banner.setOnClickListener(this);
 
-        registerUser = (Button) findViewById(R.id.registerUser);
+        Button registerUser = (Button) findViewById(R.id.registerUser);
         registerUser.setOnClickListener(this);
 
         FullName = (EditText) findViewById(R.id.register_fullName);
         Phone = (EditText) findViewById(R.id.register_phoneNumber);
         Email = (EditText) findViewById(R.id.register_email);
         Password = (EditText) findViewById(R.id.register_password);
-
+        loadingBar = new ProgressDialog(this);
 
 
         mAuth = FirebaseAuth.getInstance();
-        dataBase = FirebaseDatabase.getInstance();
+        FirebaseDatabase dataBase = FirebaseDatabase.getInstance();
         databaseReference = dataBase.getReference("Users");
         userInfo = new User();
 
@@ -68,17 +68,19 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.Login:
-                startActivity(new Intent(this , LoginActivity.class));
+                Intent loginIntent = new Intent(this , LoginActivity.class);
+                loginIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(loginIntent);
                 break;
 
             case R.id.registerUser:
-                registeredUser();
+                registereUser();
                 break;
         }
 
     }
 
-    private void registeredUser() {
+    private void registereUser() {
         String email = Email.getText().toString().trim();
         String fullName = FullName.getText().toString().trim();
         String password = Password.getText().toString().trim();
@@ -121,6 +123,10 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             return;
 
         }
+        loadingBar.setTitle("Creating New Account");
+        loadingBar.setMessage("Please wait,while we are creating your new Account..");
+        loadingBar.show();
+        loadingBar.setCanceledOnTouchOutside(true);
         mAuth.createUserWithEmailAndPassword(email , password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
@@ -130,16 +136,18 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                             userInfo.setPhoneNumber(phone_number);
                             userInfo.setFullName(fullName);
                             databaseReference
-                                    .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                    .child(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid())
                                     .setValue(userInfo).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if(task.isSuccessful()){
                                         Toast.makeText(RegisterActivity.this , "User Registered!!" , Toast.LENGTH_LONG).show();
+                                        loadingBar.dismiss();
 
                                     }
                                     else{
                                         Toast.makeText(RegisterActivity.this , "Failed to register! Try Again" , Toast.LENGTH_LONG).show();
+                                        loadingBar.dismiss();
                                     }
                                 }
                             });
@@ -147,6 +155,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                         }
                         else {
                             Toast.makeText(RegisterActivity.this , "Failed To Register" , Toast.LENGTH_LONG).show();
+                            loadingBar.dismiss();
                         }
                     }
                 });
@@ -166,29 +175,5 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
 
     }
-    /*
 
-    private void addDataToFirebase(String fullName, String phone_number, String email) {
-        userInfo.setFullName(fullName);
-        userInfo.setPhoneNumber(phone_number);
-        userInfo.setEmail(email);
-        databaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                databaseReference.setValue(userInfo );
-                Toast.makeText(RegisterActivity.this , "User registered" , Toast.LENGTH_LONG).show();
-
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(RegisterActivity.this , "Failed to Register" , Toast.LENGTH_LONG).show();
-
-            }
-        });
-
-
-    }
-    */
 }
