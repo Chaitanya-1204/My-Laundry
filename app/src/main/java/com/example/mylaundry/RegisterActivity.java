@@ -22,6 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.DatabaseReference;
 
 import java.util.Objects;
+import com.example.mylaundry.Model.User;
 
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
     private EditText FullName , Phone , Email , Password;
