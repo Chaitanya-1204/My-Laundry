@@ -5,158 +5,136 @@
     android:background="@color/white">
 
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/banner"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
-            android:text="Registration"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            android:textColor="#23203f"
-            android:layout_gravity="center"/>
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/register_fullName"
-            android:hint="Full Name"
-            android:inputType="text"
-            android:textColorHint="@color/gray"
-            android:background="#00000000"
-            android:textSize="30sp"
-            android:fontFamily="sans-serif-light"
-            android:textStyle="normal"
-            android:textColor="@color/black"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:ems="10"/>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/view_gray"
-        android:layout_marginTop="18dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        />
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/register_phoneNumber"
-        android:hint="Phone Number"
-        android:inputType="phone"
-        android:textColorHint="@color/gray"
-        android:background="#00000000"
-        android:textSize="30sp"
-        android:fontFamily="sans-serif-light"
-        android:textStyle="normal"
-        android:textColor="#9391a4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:ems="10"/>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/view_gray"
-        android:layout_marginTop="18dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        />
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/register_email"
-        android:hint="Email"
-        android:drawableStart="@drawable/launcher_email"
-        android:inputType="textEmailAddress"
-        android:textColorHint="@color/gray"
-        android:background="#00000000"
-        android:textSize="30sp"
-        android:fontFamily="sans-serif-light"
-        android:textStyle="normal"
-        android:textColor="#9391a4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:ems="10"/>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/view_gray"
-        android:layout_marginTop="18dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        />
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/register_password"
-        android:hint="Password"
-        android:drawableStart="@drawable/launcher_password"
-        android:inputType="textPassword"
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/ic_register_hero"
+                android:layout_gravity="center"/>
 
-        android:textColorHint="@color/gray"
-        android:background="#00000000"
-        android:textSize="30sp"
-        android:fontFamily="sans-serif-light"
-        android:textStyle="normal"
-        android:textColor="#9391a4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:ems="10"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/banner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Customer Registration"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:textColor="#23203f"
+                android:layout_gravity="center"/>
 
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/view_gray"
-        android:layout_marginTop="18dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        />
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/register_fullName"
+                android:hint="Full Name"
+                android:inputType="text"
+                android:textColorHint="@color/colorPrimaryDark"
+                android:background="@drawable/edit_text_bg"
+                android:textSize="22sp"
+                android:padding="10dp"
+                android:fontFamily="sans-serif-light"
+                android:textStyle="normal"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:ems="10"/>
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/register_phoneNumber"
+                android:hint="Phone Number"
+                android:inputType="phone"
+                android:textColorHint="@color/colorPrimaryDark"
+                android:background="@drawable/edit_text_bg"
+                android:textSize="22sp"
+                android:padding="10dp"
+                android:fontFamily="sans-serif-light"
+                android:textStyle="normal"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:ems="10"/>
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/register_email"
+                android:hint="Email"
+                android:drawableStart="@drawable/launcher_email"
+                android:inputType="textEmailAddress"
+                android:textColorHint="@color/colorPrimaryDark"
+                android:background="@drawable/edit_text_bg"
+                android:textSize="22sp"
+                android:padding="10dp"
+                android:fontFamily="sans-serif-light"
+                android:textStyle="normal"
+                android:textColor="#9391a4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:ems="10"/>
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/register_password"
+                android:hint="Password"
+                android:drawableStart="@drawable/launcher_password"
+                android:inputType="textPassword"
+
+                android:textColorHint="@color/colorPrimaryDark"
+                android:background="@drawable/edit_text_bg"
+                android:textSize="22sp"
+                android:padding="10dp"
+                android:fontFamily="sans-serif-light"
+                android:textStyle="normal"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:ems="10"/>
 
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/registerUser"
-        android:layout_width="185dp"
-        android:layout_marginTop="25dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:background="@drawable/button_gradient"
-        android:text="Register"
-        android:textColor="@color/white"/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_margin="16dp">
 
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/Login"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="60dp"
-            android:text= "Already Registered?   Login"
-            android:gravity="center"
-            android:textSize="20dp"
-            android:textColor="#aaaaaa" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/registerUser"
+                android:layout_width="185dp"
+                android:layout_marginTop="25dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="100dp"
+                android:background="@drawable/button_gradient"
+                android:text="Register"
+                android:textColor="@color/white"/>
 
 
-    </LinearLayout>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/Login"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="60dp"
+                android:text= "Already Registered?   Login"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:textColor="@color/colorPrimaryDark" />
 
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:src="@drawable/ic_register_hero"
-        android:layout_gravity="center"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 
 </LinearLayout>

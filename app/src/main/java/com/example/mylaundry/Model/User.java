@@ -1,4 +1,4 @@
-package com.example.mylaundry;
+package com.example.mylaundry.Model;
 
 public class User {
     private String fullName;

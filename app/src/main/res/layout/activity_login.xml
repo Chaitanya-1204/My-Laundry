@@ -15,6 +15,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_register_hero"
+                android:layout_gravity="center"/>
+
 
 
 
@@ -25,11 +31,11 @@
                 android:fontFamily="sans-serif-medium"
                 android:textStyle="normal"
                 android:textColor="#23203f"
-                android:layout_marginTop="47dp"
+                android:layout_marginTop="20dp"
                 android:layout_gravity="center"
                 android:letterSpacing="-0.01"
                 android:lineSpacingExtra="20sp"
-                android:text="Sign In" />
+                android:text="Customer Login" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"
@@ -45,67 +51,56 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="73dp"
-                android:layout_marginRight="29dp"
-                android:layout_marginLeft="29dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
                 android:orientation="vertical">
 
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_register_hero"
-                    android:layout_gravity="center"/>
+
 
                 <androidx.appcompat.widget.AppCompatEditText
                     android:id = "@+id/login_email"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#00000000"
+                    android:layout_height="50dp"
+                    android:background="@drawable/edit_text_bg"
                     android:layout_marginTop="28dp"
-                    android:textSize="30sp"
+
+                    android:ems="10"
                     android:fontFamily="sans-serif-light"
                     android:textStyle="normal"
-                    android:textColor="#9391a4"
+                    android:textColor="@color/colorPrimaryDark"
                     android:inputType="textEmailAddress"
-                    android:hint="Email"
+                    android:hint="E-mail"
+                    android:textSize="20sp"
                     android:drawableStart="@drawable/launcher_email"
-                    android:textColorHint="@color/gray"
+                    android:textColorHint="@color/colorPrimaryDark"
+                    android:padding="10dp"
 
                     />
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/view_gray"
-                    android:layout_marginTop="18dp"
-                    />
 
-                <androidx.appcompat.widget.AppCompatEditText
-                    android:id = "@+id/login_password"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#00000000"
-                    android:layout_marginTop="13.3dp"
-                    android:hint="Password"
-                    android:paddingRight="20dp"
 
-                    android:inputType="textPassword"
-                    android:textSize="30sp"
-                    android:drawableStart="@drawable/launcher_password"
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id = "@+id/login_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/edit_text_bg"
+                        android:layout_marginTop="15dp"
+                        android:hint="Password"
 
-                    android:fontFamily = "sans-serif-light"
-                    android:textStyle="normal"
-                    android:textColorHint="@color/gray"
-                    android:textColor="@color/gray"
+                        android:ems="10"
+                        android:inputType="textPassword"
+                        android:textSize="20sp"
+                        android:drawableStart="@drawable/launcher_password"
+                        android:padding="10dp"
+                        android:fontFamily = "sans-serif-light"
+                        android:textStyle="normal"
+                        android:textColorHint="@color/colorPrimaryDark"
+                        android:textColor="@color/colorPrimaryDark"
 
-                    />
+                        />
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/view_gray"
-                    android:layout_marginTop="18dp"
-                    />
+
 
 
                 <androidx.appcompat.widget.AppCompatButton
@@ -142,7 +137,7 @@
                         android:textSize="18sp"
                         android:fontFamily="sans-serif-light"
                         android:textStyle="normal"
-                        android:textColor="#9391a4"
+                        android:textColor="@color/colorPrimaryDark"
                         android:lineSpacingExtra="26sp"
                         android:text="@string/don_t_have_and_account_register_here"/>
 
@@ -151,6 +146,7 @@
 
 
             </LinearLayout>
+
 
 
 
