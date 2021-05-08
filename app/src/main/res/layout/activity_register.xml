@@ -35,8 +35,9 @@
 
             <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/register_fullName"
+                android:drawableLeft="@drawable/name"
                 android:hint="Full Name"
-                android:inputType="text"
+                android:inputType="textPersonName"
                 android:textColorHint="@color/colorPrimaryDark"
                 android:background="@drawable/edit_text_bg"
                 android:textSize="22sp"
@@ -54,6 +55,7 @@
             <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/register_phoneNumber"
                 android:hint="Phone Number"
+                android:drawableLeft="@drawable/phone_icon"
                 android:inputType="phone"
                 android:textColorHint="@color/colorPrimaryDark"
                 android:background="@drawable/edit_text_bg"
@@ -119,7 +121,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="100dp"
                 android:background="@drawable/button_gradient"
-                android:text="Register"
+                android:text="Sign UP"
                 android:textColor="@color/white"/>
 
 

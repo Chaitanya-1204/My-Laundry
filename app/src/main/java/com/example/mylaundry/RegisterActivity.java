@@ -141,6 +141,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if(task.isSuccessful()){
+
                                         Toast.makeText(RegisterActivity.this , "User Registered!!" , Toast.LENGTH_LONG).show();
                                         loadingBar.dismiss();
 
@@ -175,5 +176,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
 
     }
+
+
 
 }
