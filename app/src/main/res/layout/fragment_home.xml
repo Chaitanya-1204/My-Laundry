@@ -171,6 +171,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/active_orders"
                     android:layout_marginTop="9dp"
+
                     android:clipToPadding="false"
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp" />

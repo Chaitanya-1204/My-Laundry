@@ -1,11 +1,9 @@
 package com.example.mylaundry;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.view.MenuItem;
 
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
@@ -13,8 +11,8 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
 import com.example.mylaundry.menu.home.HomeFragment;
+import com.example.mylaundry.menu.more.MoreFragment;
 import com.example.mylaundry.menu.order.OrderFragment;
-import com.google.android.material.bottomnavigation.BottomNavigationMenu;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -33,11 +31,13 @@ public class MainActivity extends AppCompatActivity {
 
 
         bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
+
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
 
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
 
         drawerLayout = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this , drawerLayout , toolbar,
@@ -63,6 +63,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.nav_menu_orders:
                 selectedFragment = new OrderFragment();
+                break;
+            case R.id.nav_menu_more:
+                selectedFragment = new MoreFragment();
                 break;
 
         }
