@@ -17,7 +17,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:fontFamily="@font/nunito_black"
-            android:text="Account Profile"
+            android:text="Settings"
             android:textColor="@color/dark_late_gray"
             android:textSize="30dp"
             android:textStyle="bold" />
@@ -42,11 +42,12 @@
                 android:src="@drawable/ic_user" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:text="My Account"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
+
 
                 android:textSize="25sp"
                 android:fontFamily="@font/nunito_black"/>
@@ -73,12 +74,12 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginStart="15dp"
 
-                android:src="@drawable/ic_user" />
+                android:src="@drawable/ic_help" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
-                android:text="Help"
+                android:text= "FAQ'S"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
                 android:textSize="25sp"
@@ -105,7 +106,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginStart="15dp"
 
-                android:src="@drawable/ic_user" />
+                android:src="@drawable/ic_call" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -119,6 +120,10 @@
 
 
         </LinearLayout>
+
+
+
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -137,7 +142,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginStart="15dp"
 
-                android:src="@drawable/ic_user" />
+                android:src="@drawable/ic_log_in" />
 
             <TextView
                 android:layout_width="wrap_content"

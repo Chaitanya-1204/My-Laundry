@@ -8,6 +8,7 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="view_gray">#8d95989a</color>
+    <color name="grayLight">#fafafa</color>
 
     <color name="contentTextColor">#020000</color>
     <color name="register_bk_color">#11CFC5</color>

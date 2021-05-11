@@ -56,7 +56,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
 
     }
-    /*
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -70,7 +70,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     }
 
-     */
+
 
     private void SendUserToMainActivity() {
         Intent mainIntent = new Intent(this, MainActivity.class);

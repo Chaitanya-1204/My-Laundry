@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white">
 
@@ -15,100 +17,116 @@
             android:orientation="vertical">
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
                 android:layout_marginTop="5dp"
+                android:layout_marginStart="12dp"
                 android:src="@drawable/ic_register_hero"
-                android:layout_gravity="center"/>
+                />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/banner"
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="Customer Registration"
-                android:textSize="25sp"
-                android:textStyle="bold"
-                android:textColor="#23203f"
-                android:layout_gravity="center"/>
+                android:text="WELCOME"
+                android:layout_marginStart="12dp"
+                android:textSize="40sp"
+                android:fontFamily="@font/bungee"
+                android:layout_marginTop="-10dp"/>
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SignUp to Start a new Journey"
+                android:textSize="18sp"
+                android:layout_marginTop="-15dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginStart="12dp"
+                />
 
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/register_fullName"
-                android:drawableLeft="@drawable/name"
+x
+            <com.google.android.material.textfield.TextInputLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_margin="8dp"
+
                 android:hint="Full Name"
-                android:inputType="textPersonName"
-                android:textColorHint="@color/colorPrimaryDark"
-                android:background="@drawable/edit_text_bg"
-                android:textSize="22sp"
-                android:padding="10dp"
-                android:fontFamily="sans-serif-light"
-                android:textStyle="normal"
-                android:textColor="@color/colorPrimaryDark"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/register_fullName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:drawableStart="@drawable/ic_user_small_icon"
+                    android:drawablePadding="10dp"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:ems="10"/>
+                android:layout_margin ="8dp"
+                android:hint="Email">
 
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/register_phoneNumber"
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/register_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_mail"
+                    android:inputType="textEmailAddress"
+                    android:drawablePadding="10dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin ="8dp"
                 android:hint="Phone Number"
-                android:drawableLeft="@drawable/phone_icon"
-                android:inputType="phone"
-                android:textColorHint="@color/colorPrimaryDark"
-                android:background="@drawable/edit_text_bg"
-                android:textSize="22sp"
-                android:padding="10dp"
-                android:fontFamily="sans-serif-light"
-                android:textStyle="normal"
-                android:textColor="@color/colorPrimaryDark"
+                app:counterEnabled="true"
+                app:counterMaxLength="10">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/register_phoneNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_phone"
+                    android:drawablePadding="10dp"
+                    android:inputType="textPhonetic"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:ems="10"/>
+                android:layout_margin ="8dp"
+                app:passwordToggleEnabled="true"
 
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/register_email"
-                android:hint="Email"
-                android:drawableStart="@drawable/launcher_email"
-                android:inputType="textEmailAddress"
-                android:textColorHint="@color/colorPrimaryDark"
-                android:background="@drawable/edit_text_bg"
-                android:textSize="22sp"
-                android:padding="10dp"
-                android:fontFamily="sans-serif-light"
-                android:textStyle="normal"
-                android:textColor="#9391a4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:ems="10"/>
+                android:hint="Password">
 
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/register_password"
-                android:hint="Password"
-                android:drawableStart="@drawable/launcher_password"
-                android:inputType="textPassword"
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/register_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_password"
+                    android:drawablePadding="10dp"
+                    android:inputType="textPassword" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-                android:textColorHint="@color/colorPrimaryDark"
-                android:background="@drawable/edit_text_bg"
-                android:textSize="22sp"
-                android:padding="10dp"
-                android:fontFamily="sans-serif-light"
-                android:textStyle="normal"
-                android:textColor="@color/colorPrimaryDark"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:ems="10"/>
+
+
+                    <!-- -->
+
+
+
+
+
+
+
+
+
 
 
 

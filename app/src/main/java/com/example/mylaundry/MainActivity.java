@@ -35,6 +35,9 @@ public class MainActivity extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
 
 
+
+        /*
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -48,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
         toggle.setToolbarNavigationClickListener(view -> drawerLayout.openDrawer(GravityCompat.START));
         toggle.setHomeAsUpIndicator(R.drawable.ic_menu);
         toggle.syncState();
+
+         */
 
 
 
@@ -77,15 +82,5 @@ public class MainActivity extends AppCompatActivity {
         return true;
     };
 
-    @Override
-    public void onBackPressed() {
-        if(drawerLayout.isDrawerOpen(GravityCompat.START)){
-            drawerLayout.closeDrawer(GravityCompat.START);
-        }
-        else{
-            super.onBackPressed();
-
-        }
-
-    }
+   
 }

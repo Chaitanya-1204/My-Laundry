@@ -15,11 +15,13 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
                 android:src="@drawable/ic_register_hero"
-                android:layout_gravity="center"/>
+                android:layout_marginStart="15dp"
+
+                />
 
 
 
@@ -32,7 +34,7 @@
                 android:textStyle="normal"
                 android:textColor="#23203f"
                 android:layout_marginTop="20dp"
-                android:layout_gravity="center"
+                android:layout_marginStart="15dp"
                 android:letterSpacing="-0.01"
                 android:lineSpacingExtra="20sp"
                 android:text="Customer Login" />
@@ -40,11 +42,11 @@
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="10dp"
                 android:letterSpacing="0.0265"
                 android:textColor="#6e6e73"
-                android:layout_gravity="center"
-                android:text="WELCOME TO LAUNDRY DROID"
+                android:layout_marginStart="15dp"
+                android:text="WELCOME TO MY LAUNDRY"
                 android:textSize="17sp"/>
 
 
@@ -56,49 +58,50 @@
                 android:layout_marginStart="10dp"
                 android:orientation="vertical">
 
+                <com.google.android.material.textfield.TextInputLayout
 
-
-                <androidx.appcompat.widget.AppCompatEditText
-                    android:id = "@+id/login_email"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:background="@drawable/edit_text_bg"
-                    android:layout_marginTop="28dp"
+                    android:layout_height="wrap_content"
 
-                    android:ems="10"
-                    android:fontFamily="sans-serif-light"
-                    android:textStyle="normal"
-                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_margin="8dp"
+
+                    android:hint="Email"
+                    >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/login_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:inputType="textEmailAddress"
-                    android:hint="E-mail"
-                    android:textSize="20sp"
-                    android:drawableStart="@drawable/launcher_email"
-                    android:textColorHint="@color/colorPrimaryDark"
-                    android:padding="10dp"
-
+                    android:drawableStart="@drawable/ic_user_small_icon"
+                    android:drawablePadding="10dp"
                     />
+                </com.google.android.material.textfield.TextInputLayout>
 
+                <com.google.android.material.textfield.TextInputLayout
 
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin ="8dp"
+                    app:passwordToggleEnabled="true"
 
-                    <androidx.appcompat.widget.AppCompatEditText
-                        android:id = "@+id/login_password"
+                    android:hint="Password">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/login_password"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/edit_text_bg"
-                        android:layout_marginTop="15dp"
-                        android:hint="Password"
+                        android:drawableStart="@drawable/ic_password"
+                        android:drawablePadding="10dp"
+                        android:inputType="textPassword" />
+                </com.google.android.material.textfield.TextInputLayout>
 
-                        android:ems="10"
-                        android:inputType="textPassword"
-                        android:textSize="20sp"
-                        android:drawableStart="@drawable/launcher_password"
-                        android:padding="10dp"
-                        android:fontFamily = "sans-serif-light"
-                        android:textStyle="normal"
-                        android:textColorHint="@color/colorPrimaryDark"
-                        android:textColor="@color/colorPrimaryDark"
 
-                        />
+
+
+
+
+
 
 
 
