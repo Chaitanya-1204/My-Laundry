@@ -23,7 +23,7 @@
         <activity
             android:name=".MyAccount"
             android:label="My Profile"
-            android:theme="@style/Theme.Design.NoActionBar">
+            android:theme="@style/Theme.Design.DarkActionBar">
 
         </activity>
         <activity
@@ -37,7 +37,7 @@
         </activity>
         <activity
             android:name=".LoginActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            android:theme="@style/Theme.Design.NoActionBar">
 
         </activity>
 
