@@ -4,9 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_half_rounded2"
+    android:background="@drawable/bg_background"
     android:orientation="vertical"
     tools:context=".MyAccount">
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,7 +17,6 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="300dp"
-            android:background="@color/white_smoke"
             android:padding="20dp">
 
 
@@ -38,6 +38,7 @@
                 android:fontFamily="@font/nunito_bold"
                 android:includeFontPadding="false"
                 android:text="Chaitanya Patil"
+                android:textColor="@color/black"
                 android:textSize="20sp" />
 
             <TextView
@@ -50,6 +51,7 @@
                 android:layout_toRightOf="@+id/profile_photo"
                 android:fontFamily="@font/nunito_bold"
                 android:includeFontPadding="false"
+                android:textColor="@color/black"
                 android:text="chaitanyapatil@gmail.com"
 
                 android:textSize="10sp" />
@@ -89,6 +91,7 @@
                         android:fontFamily="@font/nunito_bold"
                         android:includeFontPadding="false"
                         android:text="Active Order"
+                        android:textColor="@color/black"
                         android:textSize="15sp" />
 
                     <TextView
@@ -99,6 +102,7 @@
                         android:layout_centerInParent="true"
                         android:fontFamily="@font/nunito_bold"
                         android:includeFontPadding="false"
+                        android:textColor="@color/black"
                         android:text="12"
                         android:textSize="15sp" />
 
@@ -132,6 +136,7 @@
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
                         android:fontFamily="@font/nunito_bold"
+                        android:textColor="@color/black"
                         android:includeFontPadding="false"
                         android:text="Total Order"
                         android:textSize="15sp" />
@@ -144,6 +149,7 @@
                         android:layout_centerInParent="true"
                         android:fontFamily="@font/nunito_bold"
                         android:includeFontPadding="false"
+                        android:textColor="@color/black"
                         android:text="12"
                         android:textSize="15sp" />
 
@@ -161,65 +167,94 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:hint="Full Name">
+                android:layout_marginBottom="20dp"
+                android:hint="Full Name"
+
+                android:textColorHint="@color/black">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id = "@+id/profile_full_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@color/white_smoke"
                     android:drawableStart="@drawable/ic_user_small_icon"
                     android:drawablePadding="10dp"
-                    android:text="Chaitanya Patil" />
+                    android:inputType="textPersonName"
+                    android:text="Chaitanya Patil"
+                    android:textColor="@color/black" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:hint="Email">
+                android:layout_marginBottom="20dp"
+                android:hint="Email"
+                android:textColorHint="@color/black">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/profile_email_id"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@color/white_smoke"
                     android:drawableStart="@drawable/ic_mail"
                     android:drawablePadding="10dp"
-                    android:text="chaitanya@gmail.com" />
+                    android:inputType="textEmailAddress"
+                    android:text="chaitanya@gmail.com"
+                    android:textColor="@color/black" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:hint="Phone Number">
+
+                android:hint="Phone Number"
+                app:counterEnabled="true"
+                app:counterMaxLength="10"
+                app:errorEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/profile_phone_number"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+
                     android:drawableStart="@drawable/ic_phone"
                     android:drawablePadding="10dp"
-                    android:text="906759098" />
+                    android:inputType="textPhonetic"
+                    android:text="9067759098"
+                    android:textColor="@color/black" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:hint="Password">
+                android:layout_marginBottom="20dp"
+                android:hint="Password"
+                android:textColorHint="@color/black"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/black">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/profile_password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableStart="@drawable/ic_password"
                     android:drawablePadding="10dp"
-                    android:text="123456" />
+                    android:inputType="textPassword"
+
+                    android:text="123456"
+                    android:textColor="@color/black" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/edit_profile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
                 android:background="@drawable/button_gradient"
                 android:fontFamily="@font/nunito_bold"
-                android:text="Edit Profile"/>
+
+                android:text="Edit Profile"
+                android:textColor="@color/white" />
 
 
         </LinearLayout>

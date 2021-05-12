@@ -11,7 +11,7 @@
         android:background="@drawable/bg_half_rounded2">
 
         <TextView
-            android:id="@+id/account_profile"
+            android:id="@+id/settings"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
@@ -27,7 +27,7 @@
             android:layout_height="60dp"
             android:id="@+id/my_account"
 
-            android:layout_below="@id/account_profile"
+            android:layout_below="@id/settings"
             android:layout_marginTop="30dp"
 
             android:orientation="horizontal"
@@ -128,7 +128,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:id="@+id/logOut"
+            android:id="@+id/signOut"
 
             android:layout_below="@id/contactUs"
             android:layout_marginTop="30dp"

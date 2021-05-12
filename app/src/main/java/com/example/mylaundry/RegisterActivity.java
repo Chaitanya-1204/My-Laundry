@@ -22,6 +22,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.DatabaseReference;
 
 import java.util.Objects;
+import java.util.regex.Pattern;
+
 import com.example.mylaundry.Model.User;
 
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
@@ -82,48 +84,16 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     }
 
     private void registereUser() {
-        String email = Email.getText().toString().trim();
-        String fullName = FullName.getText().toString().trim();
-        String password = Password.getText().toString().trim();
-        String phone_number = Phone.getText().toString().trim();
+        String email = Email.getText().toString();
+        String fullName = FullName.getText().toString();
+        String password = Password.getText().toString();
+        String phone_number = Phone.getText().toString();
 
-        if(fullName.isEmpty()){
-            FullName.setError("Name is Required");
-            FullName.requestFocus();
-            return;
-        }
-        if(phone_number.isEmpty()){
-            Phone.setError("Phone Number is required is Required");
-            Phone.requestFocus();
-            return;
-        }
-        if(phone_number.length() != 10){
-            Phone.setError("Invalid Phone Number");
-            Phone.requestFocus();
-            return;
-        }
-        if(email.isEmpty()){
-            Email.setError("Email is Required");
-            Email.requestFocus();
-            return;
-        }
-        if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-            Email.setError("Enter a valid Mail");
-            Email.requestFocus();
-            return;
-        }
-        if(password.isEmpty()){
-            Password.setError("Password is Required");
-            Password.requestFocus();
+        if(!validateName() ||  !validateEmail() || !validatePhoneNumber() || !validatePassword()){
             return;
         }
 
-        if (password.length() < 6){
-            Password.setError("Password must be 6 or more Character Long");
-            Password.requestFocus();
-            return;
 
-        }
         loadingBar.setTitle("Creating New Account");
         loadingBar.setMessage("Please wait,while we are creating your new Account..");
         loadingBar.show();
@@ -136,6 +106,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                             userInfo.setEmail(email);
                             userInfo.setPhoneNumber(phone_number);
                             userInfo.setFullName(fullName);
+                            userInfo.setPassword(password);
                             databaseReference
                                     .child(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid())
                                     .setValue(userInfo).addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -177,6 +148,116 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
 
     }
+
+    private Boolean validateName(){
+
+        String val = FullName.getText().toString().trim();
+        if(val.isEmpty()){
+            FullName.setError("Field Cannot be Empty");
+            return false;
+
+        }
+        else{
+            FullName.setError(null);
+            return true;
+        }
+
+    }
+    private Boolean validateEmail(){
+
+        String val = Email.getText().toString().trim();
+        String emailPattern = "[a-zA-Z0-9+_. -]+@[a-z]+\\.+[a-z]+";
+        if(val.isEmpty()){
+            Email.setError("Field Cannot be Empty");
+            return false;
+
+        }
+        else if(!val.matches(emailPattern)){
+            Email.setError("Invalid Email Address! ");
+            return false;
+
+
+        }
+        else{
+            Email.setError(null);
+
+            return true;
+        }
+
+    }
+    private Boolean validatePhoneNumber(){
+
+        String val = Phone.getText().toString().trim();
+        if(val.isEmpty()){
+            Phone.setError("Field Cannot be Empty");
+            return false;
+
+        }
+        else{
+            Phone.setError(null);
+            return true;
+        }
+
+    }
+    private Boolean validatePassword(){
+
+        String val = Password.getText().toString();
+
+        String digit = "^(?=.*[0-9])";
+        Pattern digitR = Pattern.compile(digit);
+        String lowerCase = "(?=.*[a-z])";
+        Pattern lowerCaseR = Pattern.compile(lowerCase);
+        String upperCase = "(?=.*[A-Z])";
+        Pattern upperCaseR = Pattern.compile(upperCase);
+        String whiteSpace = "(?=\\S+$)";
+        Pattern whiteSpaceR = Pattern.compile(whiteSpace);
+        String length = ".{8,20}";
+        Pattern lengthR = Pattern.compile(length);
+        String specialCharacter = "(?=.*[@#$%^&+=])";
+        Pattern specialCharacterR = Pattern.compile(specialCharacter);
+        if(val.isEmpty()){
+            Password.setError("Field Cannot be Empty");
+            return false;
+
+        }
+
+        else if(digitR.matcher(val).matches()){
+
+            Password.setError("Password should contain at least 1 digit");
+            return false;
+        }
+        else if(lowerCaseR.matcher(val).matches()){
+            Password.setError("Password should contain at least 1 lowercase Character");
+            return false;
+        }
+        else if(upperCaseR.matcher(val).matches()){
+            Password.setError("Password should contain at least 1 uppercase Character");
+            return false;
+        }
+        else if(!lengthR.matcher(val).matches()){
+            Password.setError("Password should be of length of 8 or more Characters");
+            return false;
+        }
+        else if(whiteSpaceR.matcher(val).matches()){
+            Password.setError("Password should not contain White Space");
+            return false;
+        }
+        else if(specialCharacterR.matcher(val).matches()){
+            Password.setError("Password should contain at least 1 Special Character");
+            return false;
+        }
+
+        else{
+
+            Password.setError(null);
+
+
+            return true;
+        }
+
+
+    }
+
 
 
 

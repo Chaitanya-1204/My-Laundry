@@ -1,5 +1,6 @@
 package com.example.mylaundry.menu.more;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -10,12 +11,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.mylaundry.LoginActivity;
 import com.example.mylaundry.MyAccount;
 import com.example.mylaundry.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.firebase.auth.FirebaseAuth;
 
 
 public class MoreFragment extends Fragment {
+    private LinearLayout myAccount , signOut;
+    private ProgressDialog loadingBar;
+
 
 
     private static final String ARG_PARAM1 = "param1";
@@ -63,6 +71,36 @@ public class MoreFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_more, container, false);
+
+        View view =  inflater.inflate(R.layout.fragment_more, container, false);
+        myAccount = (LinearLayout) view.findViewById(R.id.my_account);
+        myAccount.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity() , MyAccount.class));
+            }
+        }));
+
+        signOut = (LinearLayout) view.findViewById(R.id.signOut);
+        signOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(getActivity() , LoginActivity.class));
+
+                Toast.makeText(getActivity() , "Logged Out" , Toast.LENGTH_LONG).show();
+                getActivity().finish();
+
+
+            }
+        });
+
+
+
+
+
+
+        return view;
     }
 }

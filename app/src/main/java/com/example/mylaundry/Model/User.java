@@ -3,23 +3,23 @@ package com.example.mylaundry.Model;
 public class User {
     private String fullName;
 
-    // string variable for storing
-    // employee contact number
     private String phoneNumber;
 
-    // string variable for storing
-    // employee address.
     private String email;
+    private String password;
 
-    // an empty constructor is
-    // required when using
-    // Firebase Realtime Database.
+
+    public User(String fullName, String phoneNumber, String email, String password) {
+        this.fullName = fullName;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.password = password;
+    }
+
     public User() {
 
     }
 
-    // created getter and setter methods
-    // for all our variables.
     public String getFullName() {
         return fullName;
     }
@@ -44,5 +44,11 @@ public class User {
         this.email = email;
     }
 
+    public String getPassword() {
+        return password;
+    }
 
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }
