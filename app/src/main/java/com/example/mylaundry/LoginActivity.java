@@ -7,11 +7,13 @@ import androidx.appcompat.widget.AppCompatButton;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Pair;
 import android.util.Patterns;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,6 +28,8 @@ import java.util.regex.Pattern;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     private EditText Login_email , Login_password;
+    ImageView image;
+    TextView logo , sloganText;
     private FirebaseAuth mAuth;
     private ProgressDialog loadingBar;
 
@@ -86,7 +90,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.registerButton:
-                SendUserToRegisterActivity();
+                Intent registerIntent = new Intent(this, RegisterActivity.class);
+
+
+                startActivity(registerIntent);
+
+
                 break;
             case R.id.loginButton:
                 userLogin();
@@ -96,11 +105,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     }
 
-    private void SendUserToRegisterActivity() {
-        Intent registerIntent = new Intent(this, RegisterActivity.class);
-        startActivity(registerIntent);
 
-    }
 
     private void userLogin() {
         String email = Login_email.getText().toString().trim();

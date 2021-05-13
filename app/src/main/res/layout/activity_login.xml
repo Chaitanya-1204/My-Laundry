@@ -25,15 +25,18 @@
                 android:layout_height="100dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="25dp"
+                android:transitionName="splash_image"
                 android:src="@drawable/ic_register_hero" />
 
 
             <TextView
-                android:id="@+id/login_name"
+                android:id="@+id/login_logo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/bungee"
                 android:textColor="@color/black"
+
+                android:transitionName="splash_text"
 
 
                 android:text="Hello There , Welcome Back"
@@ -44,8 +47,9 @@
                 android:id="@+id/login_slogan_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/antic"
+                android:fontFamily="@font/bungee"
                 android:text="Sign In to Account"
+                android:transitionName="sign_text"
                 android:textColor="@color/black"
                 android:textSize="18sp" />
 
@@ -64,6 +68,7 @@
                     android:layout_height="wrap_content"
 
 
+
                     android:hint="Email"
 
                     android:textColorHint="@color/black"
@@ -73,6 +78,8 @@
 
                     <EditText
                         android:id="@+id/login_email"
+                        android:transitionName="email_transition"
+
 
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -91,14 +98,19 @@
                     android:hint="Password"
                     app:passwordToggleTint="@color/black"
                     android:textColorHint="@color/black"
+
                     app:passwordToggleEnabled="true">
 
                     <EditText
                         android:id="@+id/login_password"
+                        android:transitionName="password_transition"
+
+
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:drawableStart="@drawable/ic_password"
                         android:drawablePadding="10dp"
+                        android:textColor="@color/black"
                         android:inputType="textPassword" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -121,6 +133,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="5dp"
+                    android:transitionName="login_btn_transition"
                     android:background="#000000"
                     android:text="Login"
                     android:textColor="#FFF"
@@ -132,10 +145,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
+                    android:fontFamily="@font/bungee"
                     android:layout_marginTop="20.8dp"
                     android:layout_marginBottom="30.5dp"
                     android:gravity="center"
                     android:lineSpacingExtra="26sp"
+                    android:transitionName="login_signup_transistion"
                     android:text="@string/don_t_have_and_account_register_here"
                     android:textColor="@color/black"
                     android:textSize="18sp"

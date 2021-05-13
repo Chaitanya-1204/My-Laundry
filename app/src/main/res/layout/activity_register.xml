@@ -22,6 +22,7 @@
                 android:layout_height="150dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginStart="12dp"
+                android:transitionName="splash_image"
                 android:src="@drawable/ic_register_hero"
                 />
 
@@ -31,13 +32,18 @@
                 android:text="WELCOME"
                 android:layout_marginStart="12dp"
                 android:textSize="40sp"
+                android:transitionName="splash_text"
                 android:fontFamily="@font/bungee"
+                android:textColor="@color/black"
                 android:layout_marginTop="-10dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="SignUp to Start a new Journey"
+                android:transitionName="sign_text"
+                android:fontFamily="@font/bungee"
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 android:layout_marginTop="-15dp"
                 android:layout_marginBottom="15dp"
@@ -50,7 +56,7 @@ x
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
-                android:layout_margin="8dp"
+                android:layout_marginTop="10dp"
 
                 android:hint="Full Name"
                 app:errorEnabled="true"
@@ -69,13 +75,15 @@ x
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin ="8dp"
+                android:layout_marginTop="10dp"
                 app:errorEnabled="true"
+
                 android:hint="Email">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/register_email"
                     android:layout_width="match_parent"
+                    android:transitionName="email_transition"
                     android:layout_height="wrap_content"
                     android:drawableStart="@drawable/ic_mail"
                     android:inputType="textEmailAddress"
@@ -85,10 +93,11 @@ x
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin ="8dp"
+                android:layout_marginTop="10dp"
+
                 app:errorEnabled="true"
                 android:hint="Phone Number"
-                app:counterEnabled="true"
+
                 app:counterMaxLength="10">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -105,13 +114,15 @@ x
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin ="8dp"
+                android:layout_marginTop="10dp"
                 app:passwordToggleEnabled="true"
                 app:errorEnabled="true"
+
 
                 android:hint="Password">
 
                 <EditText
+                    android:transitionName="password_transition"
                     android:id="@+id/register_password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -140,10 +151,11 @@ x
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/registerUser"
                 android:layout_width="185dp"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="15dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="100dp"
-                android:background="@drawable/button_gradient"
+                android:background="#000000"
+                android:transitionName="login_btn_transition"
                 android:text="Sign UP"
                 android:textColor="@color/white"/>
 
@@ -152,12 +164,14 @@ x
                 android:id="@+id/Login"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginStart="60dp"
-                android:text= "Already Registered?   Login"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="30dp"
+                android:text= "Already Registered? Login"
+                android:transitionName="login_signup_transistion"
                 android:gravity="center"
+                android:fontFamily="@font/bungee"
                 android:textSize="20dp"
-                android:textColor="@color/colorPrimaryDark" />
+                android:textColor="@color/black" />
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

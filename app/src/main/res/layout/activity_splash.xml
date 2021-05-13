@@ -16,6 +16,7 @@
         android:layout_marginEnd="10dp"
         android:src="@drawable/ic_register_hero"
         app:layout_constraintEnd_toEndOf="parent"
+        android:transitionName="splash_image"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -26,6 +27,7 @@
         android:fontFamily="@font/bangers"
         android:textColor="#687980"
         android:text="My Laundry "
+        android:transitionName="splash_text"
         android:textAlignment="center"
         android:textSize="70sp"
         app:layout_constraintEnd_toEndOf="parent"
