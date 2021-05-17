@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".Common.SelectUser">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:id="@+id/login_image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="25dp"
+                android:src="@drawable/ic_register_hero"
+                android:transitionName="splash_image" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/header1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20.8dp"
+
+                android:fontFamily="@font/bungee"
+                android:gravity="center"
+                android:lineSpacingExtra="26sp"
+                android:text="How can we help you?"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="normal"
+                android:transitionName="login_signup_transistion" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/header2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20.8dp"
+                android:fontFamily="@font/bungee"
+                android:gravity="center"
+                android:lineSpacingExtra="26sp"
+                android:text="Select your preference"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="normal"
+                android:transitionName="login_signup_transistion" />
+
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/animationView"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_url="https://assets6.lottiefiles.com/packages/lf20_n85vndb6/laundry_shop.json" />
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/loginCustomer"
+                android:layout_width="250dp"
+                android:layout_height="75dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:backgroundTint="#ff0099cc"
+                android:text="Customer"
+                android:textColor="#FFF"
+                android:textSize="15sp"
+                android:transitionName="login_btn_transition" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/loginLaundry"
+                android:layout_width="250dp"
+                android:layout_height="75dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:backgroundTint="#ff0099cc"
+                android:text="Laundry man"
+                android:textColor="#FFF"
+                android:textSize="15sp"
+                android:transitionName="login_btn_transition" />
+
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</LinearLayout>
+

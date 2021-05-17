@@ -1,4 +1,4 @@
-package com.example.mylaundry;
+package com.example.mylaundry.LaundryPerson;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -6,131 +6,76 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.mylaundry.Model.User;
+import com.example.mylaundry.Model.LaundryPerson;
+import com.example.mylaundry.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Objects;
 import java.util.regex.Pattern;
 
-import com.example.mylaundry.Model.User;
-import com.hbb20.CountryCodePicker;
-
-public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
+public class LaundryRegistrationActivity extends AppCompatActivity {
     private EditText FullName , Phone , Email , Password;
     private ProgressDialog loadingBar;
 
     private FirebaseAuth mAuth;
     private DatabaseReference databaseReference;
-    User userInfo = new User();
-
-    CountryCodePicker countryCodePicker;
-
-
-
-
+    LaundryPerson userInfo = new LaundryPerson();
 
     @Override
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
-
-        TextView login = (TextView) findViewById(R.id.Login);
-        login.setOnClickListener(this);
+        setContentView(R.layout.activity_laundry_registration);
+        TextView login = (TextView) findViewById(R.id.laundry_Login);
 
 
-        Button registerUser = (Button) findViewById(R.id.registerUser);
-        registerUser.setOnClickListener(this);
 
-        FullName = (EditText) findViewById(R.id.register_fullName);
-        Phone = (EditText) findViewById(R.id.register_phoneNumber);
-        Email = (EditText) findViewById(R.id.register_email);
-        Password = (EditText) findViewById(R.id.register_password);
+        Button registerUser = (Button) findViewById(R.id.laundry_registerUser);
+
+
+        FullName = (EditText) findViewById(R.id.laundry_register_fullName);
+        Phone = (EditText) findViewById(R.id.laundry_register_phoneNumber);
+        Email = (EditText) findViewById(R.id.laundry_register_email);
+        Password = (EditText) findViewById(R.id.laundry_register_password);
         loadingBar = new ProgressDialog(this);
-        countryCodePicker = findViewById(R.id.country_code_picker);
-        
 
 
         mAuth = FirebaseAuth.getInstance();
         FirebaseDatabase dataBase = FirebaseDatabase.getInstance();
-        databaseReference = dataBase.getReference("Users");
-        databaseReference.setValue("Customers");
-        userInfo = new User();
-
-
-
-
-
-    }
-
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.Login:
-                Intent loginIntent = new Intent(this , LoginActivity.class);
+        databaseReference = dataBase.getReference("Laundry Person");
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent loginIntent = new Intent(LaundryRegistrationActivity.this , LaundryLoginActivity.class);
                 loginIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(loginIntent);
-                break;
 
-            case R.id.registerUser:
-                // VerifyOtpScreen();
+            }
+        });
+        registerUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 registereUser();
-                break;
-        }
 
+            }
+        });
     }
-    /*
-
-    private void VerifyOtpScreen() {
-        loadingBar.setTitle("Creating New Account");
-        loadingBar.setMessage("Please wait,while we are creating your new Account..");
-        loadingBar.show();
-        loadingBar.setCanceledOnTouchOutside(true);
-
-        String email = Email.getText().toString().trim();
-        String fullName = FullName.getText().toString().trim();
-        String password = Password.getText().toString().trim();
-        String phone_number = Phone.getText().toString().trim();
-
-        String phone = "+" + countryCodePicker.getFullNumber() + phone_number;
-
-        Intent intent = new Intent(getApplicationContext() , otpVerification.class);
-
-        intent.putExtra("email" ,email);
-        intent.putExtra("fullName" ,fullName);
-        intent.putExtra("password" ,password);
-        intent.putExtra("phone" ,phone);
-        startActivity(intent);
-        loadingBar.dismiss();
-
-
-
-
-
-
-
-
-    }
-    
-     */
 
     private void registereUser() {
-        String email = Email.getText().toString().trim();
-        String fullName = FullName.getText().toString().trim();
-        String password = Password.getText().toString().trim();
-        String phone_number = Phone.getText().toString().trim();
+        String email = Email.getText().toString();
+        String fullName = FullName.getText().toString();
+        String password = Password.getText().toString();
+        String phone_number = Phone.getText().toString();
 
         if(!validateName() ||  !validateEmail() || !validatePhoneNumber() || !validatePassword()){
             return;
@@ -156,16 +101,15 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if(task.isSuccessful()){
-                                        startActivity(new Intent(RegisterActivity.this , MainActivity.class));
+                                        startActivity(new Intent(LaundryRegistrationActivity.this , LaundryMainActivity.class));
                                         finish();
 
-                                        Toast.makeText(RegisterActivity.this , "User Registered!!" , Toast.LENGTH_LONG).show();
+                                        Toast.makeText(LaundryRegistrationActivity.this , "User Registered!!" , Toast.LENGTH_LONG).show();
                                         loadingBar.dismiss();
-
 
                                     }
                                     else{
-                                        Toast.makeText(RegisterActivity.this , "Failed to register! Try Again" , Toast.LENGTH_LONG).show();
+                                        Toast.makeText(LaundryRegistrationActivity.this , "Failed to register! Try Again" , Toast.LENGTH_LONG).show();
                                         loadingBar.dismiss();
                                     }
                                 }
@@ -173,28 +117,12 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
                         }
                         else {
-                            Toast.makeText(RegisterActivity.this , "Failed To Register" , Toast.LENGTH_LONG).show();
+                            Toast.makeText(LaundryRegistrationActivity.this , "Failed To Register" , Toast.LENGTH_LONG).show();
                             loadingBar.dismiss();
                         }
                     }
                 });
-
-
-
-        // addDataToFirebase(fullName , phone_number  , email);
-
-
-
-
-
-
-
-
-
-
-
     }
-
     private Boolean validateName(){
 
         String val = FullName.getText().toString().trim();
@@ -303,8 +231,5 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
 
     }
-
-
-
 
 }

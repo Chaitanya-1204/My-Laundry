@@ -11,7 +11,7 @@
 
 
     <FrameLayout
-        android:id="@+id/fragment_container"
+        android:id="@+id/laundry_fragment_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
 
@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation"
+        android:id="@+id/laundry_bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_alignParentBottom="true"

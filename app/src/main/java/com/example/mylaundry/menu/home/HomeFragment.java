@@ -60,7 +60,7 @@ public class    HomeFragment extends Fragment {
         recyclerView = view.findViewById(R.id.recycler_active_order);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-
+    
         recyclerView.setNestedScrollingEnabled(true);
         
        // initializeData();

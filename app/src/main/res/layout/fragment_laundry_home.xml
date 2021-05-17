@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LaundryPerson.Home.LaundryHomeAdapter">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/laundry_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/nunito_semi_bold"
+                android:text="Welcome"
+                android:textColor="@color/dark_late_gray"
+                android:textSize="24sp"
+                android:layout_marginLeft="15dp" />
+
+
+            <TextView
+                android:id="@+id/laundry_choose_services"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/laundry_title"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/nunito_black"
+                android:text="On Going Orders"
+                android:textColor="@color/dark_late_gray"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginLeft="20dp" />
+
+            <LinearLayout
+                android:id="@+id/laundry_container_choose_service"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/laundry_choose_services"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                tools:ignore="RtlSymmetry">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="15dp"
+                    android:gravity="center_horizontal"
+                    android:layout_marginRight="15dp">
+
+                    <ImageView
+                        android:id="@+id/laundry_image_1"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/bg_item_choose_services"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_iron"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/laundry_image_1"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/nunito_bold"
+                        android:text="Ironing"
+                        android:layout_centerHorizontal="true"
+                        android:textAlignment="center"
+                        android:textColor="@color/dark_late_gray"
+                        android:textSize="11sp"
+                        tools:ignore="SmallSp"
+                        android:gravity="center_horizontal" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="15dp"
+                    android:gravity="center_horizontal"
+                    android:layout_marginRight="15dp">
+
+                    <ImageView
+                        android:id="@+id/laundry_image_2"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/bg_item_choose_services"
+                        android:padding="15dp"
+                        android:src="@drawable/ic_washing_machine"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/laundry_image_2"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/nunito_bold"
+                        android:layout_centerHorizontal="true"
+                        android:text="Wash and Iron"
+                        android:textAlignment="center"
+                        android:textColor="@color/dark_late_gray"
+                        android:textSize="11sp"
+                        tools:ignore="SmallSp"
+                        android:gravity="center_horizontal" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="15dp"
+                    android:gravity="center_horizontal"
+                    android:layout_marginRight="15dp">
+
+                    <ImageView
+                        android:id="@+id/laundry_image_3"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/bg_item_choose_services"
+                        android:padding="15dp"
+                        android:src="@drawable/ic_shirt"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/laundry_image_3"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/nunito_bold"
+                        android:layout_centerHorizontal="true"
+                        android:text="Dry Cleaning"
+                        android:textAlignment="center"
+                        android:textColor="@color/dark_late_gray"
+                        android:textSize="11sp"
+                        tools:ignore="SmallSp"
+                        android:gravity="center_horizontal" />
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/laundry_container_choose_service"
+                android:layout_marginTop="-7dp"
+                android:background="@drawable/bg_half_rounded2">
+
+
+                <TextView
+                    android:id="@+id/laundry_active_orders"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/nunito_black"
+                    android:text="Active Orders"
+                    android:textColor="@color/dark_late_gray"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/laundry_recycler_active_order"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/laundry_active_orders"
+                    android:layout_marginTop="9dp"
+
+                    android:clipToPadding="false"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/laundry_button2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@id/laundry_active_orders"
+                    android:layout_alignLeft="@id/laundry_recycler_active_order"
+                    android:layout_marginLeft="234dp"
+                    android:background="@drawable/button_gradient"
+                    android:paddingTop="10.5dp"
+                    android:paddingBottom="10.5dp"
+                    android:text=" Add order  "
+                    android:textColor="#ffffff" />
+
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</FrameLayout>
