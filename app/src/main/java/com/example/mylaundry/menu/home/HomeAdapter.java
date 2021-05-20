@@ -36,8 +36,8 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull HomeAdapter.ViewHolder holder, int position) {
         holder.orderImage.setImageResource(orderList.get(position).getImage());
-        holder.orderId.setText(orderList.get(position).getOrderId());
-        holder.orderStatus.setText(orderList.get(position).getOrderStatus());
+
+        holder.orderItemCount.setText(orderList.get(position).getItemOrder());
         holder.orderPrice.setText(orderList.get(position).getPrice());
 
     }
@@ -51,14 +51,14 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
         ImageView orderImage;
-        TextView orderId , orderPrice , orderStatus;
+        TextView orderItemCount, orderPrice;
 
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             orderImage = itemView.findViewById(R.id.item_order_image);
-            orderId = itemView.findViewById(R.id.item_order_name);
-            orderStatus = itemView.findViewById(R.id.item_order_status);
+
+            orderItemCount = itemView.findViewById(R.id.item_order_itemCount);
             orderPrice  = itemView.findViewById(R.id.item_order_price);
         }
     }

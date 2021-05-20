@@ -56,6 +56,7 @@ public class SplashActivity extends AppCompatActivity {
 
                 Intent i = new Intent(SplashActivity.this, LoginActivity.class);
 
+
                 Pair[] pairs = new Pair[2];
                 pairs[0] = new Pair<View, String>(imageView , "splash_image");
                 pairs[1] = new Pair<View , String>(logo , "splash_logo_text");

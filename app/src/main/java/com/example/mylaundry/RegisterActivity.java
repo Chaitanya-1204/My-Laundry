@@ -10,21 +10,27 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.mylaundry.LaundryPerson.LaundryMainActivity;
 import com.example.mylaundry.Model.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.DatabaseReference;
 
 import java.util.Objects;
 import java.util.regex.Pattern;
 
-import com.example.mylaundry.Model.User;
+
+import com.google.firebase.database.ValueEventListener;
 import com.hbb20.CountryCodePicker;
 
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
@@ -34,8 +40,14 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     private FirebaseAuth mAuth;
     private DatabaseReference databaseReference;
     User userInfo = new User();
+    String wUser;
 
     CountryCodePicker countryCodePicker;
+    public RadioButton selectedRoleButton;
+    RadioGroup radioGroup;
+
+    User userData = new User();
+
 
 
 
@@ -60,13 +72,17 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         Password = (EditText) findViewById(R.id.register_password);
         loadingBar = new ProgressDialog(this);
         countryCodePicker = findViewById(R.id.country_code_picker);
+
+
+
+
         
 
 
         mAuth = FirebaseAuth.getInstance();
         FirebaseDatabase dataBase = FirebaseDatabase.getInstance();
         databaseReference = dataBase.getReference("Users");
-        databaseReference.setValue("Customers");
+
         userInfo = new User();
 
 
@@ -79,9 +95,12 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.Login:
-                Intent loginIntent = new Intent(this , LoginActivity.class);
+                Intent loginIntent = new Intent(RegisterActivity.this , LoginActivity.class);
                 loginIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
+
                 startActivity(loginIntent);
+
                 break;
 
             case R.id.registerUser:
@@ -127,10 +146,16 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
      */
 
     private void registereUser() {
+
+        radioGroup = findViewById(R.id.role);
+        selectedRoleButton = findViewById(radioGroup.getCheckedRadioButtonId());
+
+
         String email = Email.getText().toString().trim();
         String fullName = FullName.getText().toString().trim();
         String password = Password.getText().toString().trim();
         String phone_number = Phone.getText().toString().trim();
+
 
         if(!validateName() ||  !validateEmail() || !validatePhoneNumber() || !validatePassword()){
             return;
@@ -150,16 +175,16 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                             userInfo.setPhoneNumber(phone_number);
                             userInfo.setFullName(fullName);
                             userInfo.setPassword(password);
+                            userInfo.setRole((String) selectedRoleButton.getText());
                             databaseReference
-                                    .child(phone_number)
+                                    .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                     .setValue(userInfo).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if(task.isSuccessful()){
-                                        startActivity(new Intent(RegisterActivity.this , MainActivity.class));
-                                        finish();
+                                        sendUserToMainActivity();
 
-                                        Toast.makeText(RegisterActivity.this , "User Registered!!" , Toast.LENGTH_LONG).show();
+                                        Toast.makeText(RegisterActivity.this , "User Registered!!" , Toast.LENGTH_SHORT).show();
                                         loadingBar.dismiss();
 
 
@@ -189,6 +214,46 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
 
 
+
+
+
+
+    }
+    private void sendUserToMainActivity() {
+        databaseReference.child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                .addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        userData = snapshot.getValue(User.class);
+
+                        Intent mainIntent;
+                        if(userData.getRole().equals("Customer")){
+
+
+                            mainIntent = new Intent(RegisterActivity.this, MainActivity.class);
+
+
+                        }
+                        else{
+
+                            mainIntent = new Intent(RegisterActivity.this, LaundryMainActivity.class);
+
+                        }
+                        Toast.makeText(RegisterActivity.this , "User Registered!!" , Toast.LENGTH_SHORT).show();
+                        mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(mainIntent);
+                        finish();
+
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+                        Toast.makeText(RegisterActivity.this , "Unable to fetch data! Pls try again" , Toast.LENGTH_SHORT).show();
+
+
+                    }
+                });
 
 
 

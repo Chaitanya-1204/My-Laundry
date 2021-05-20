@@ -3,15 +3,15 @@ package com.example.mylaundry.menu.order;
 public class OrderModel {
     int image;
 
-    String orderId;
     String price;
-    String orderStatus;
+   String itemCount;
 
-    public OrderModel(int image, String orderId, String price, String orderStatus) {
+    public OrderModel(int image, String price , String itemCount) {
         this.image = image;
-        this.orderId = orderId;
         this.price = price;
-        this.orderStatus = orderStatus;
+        this.itemCount = itemCount;
+
+
     }
 
     public int getImage() {
@@ -22,13 +22,6 @@ public class OrderModel {
         this.image = image;
     }
 
-    public String getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(String orderId) {
-        this.orderId = orderId;
-    }
 
     public String getPrice() {
         return price;
@@ -38,11 +31,11 @@ public class OrderModel {
         this.price = price;
     }
 
-    public String getOrderStatus() {
-        return orderStatus;
+    public String getItemCount() {
+        return itemCount;
     }
 
-    public void setOrderStatus(String orderStatus) {
-        this.orderStatus = orderStatus;
+    public void setItemCount(String itemCount) {
+        this.itemCount = itemCount;
     }
 }

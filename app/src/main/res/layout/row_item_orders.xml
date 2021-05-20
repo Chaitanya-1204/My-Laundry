@@ -30,35 +30,25 @@
             android:background="@color/white"
             android:gravity="center_vertical">
             <TextView
-                android:id="@+id/item_order_name"
+                android:id="@+id/item_order_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 android:fontFamily="@font/nunito_black"
                 android:maxLines="2"
-                android:text="Order Id"
+                android:text="Price"
                 android:textColor="@color/dark_late_gray"
                 android:textSize="18sp" />
             <TextView
-                android:id="@+id/item_order_status"
+                android:id="@+id/item_order_itemCount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/item_order_name"
+                android:layout_below="@+id/item_order_price"
                 android:fontFamily="@font/nunito_semi_bold"
-                android:text="Order Status"
+                android:text="Item Count"
                 android:textColor="@color/dark_gray"
                 android:textSize="12sp" />
 
-            <TextView
-                android:id="@+id/item_order_price"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Price"
-                android:textSize="12sp"
-                android:gravity="bottom"
-                android:layout_below="@id/item_order_status"
-                android:fontFamily="@font/nunito_semi_bold"
-                android:textColor="@color/dark_gray"/>
 
 
         </RelativeLayout>

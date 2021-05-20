@@ -3,28 +3,22 @@ package com.example.mylaundry.menu.home;
 public class HomeModel {
     int image;
 
-    String orderId;
+
     String price;
-    String orderStatus;
+    String itemOrder;
 
 
 
 
-    public HomeModel(int image  , String orderId , String price, String orderStatus){
+    public HomeModel(int image   , String price, String itemOrder){
         this.image  = image;
-        this.orderId = orderId;
+
         this.price = price;
-        this.orderStatus = orderStatus;
+        this.itemOrder = itemOrder;
 
 
     }
-    public String getOrderStatus() {
-        return orderStatus;
-    }
 
-    public void setOrderStatus(String orderStatus) {
-        this.orderStatus = orderStatus;
-    }
 
     public String getPrice() {
         return price;
@@ -45,13 +39,11 @@ public class HomeModel {
         this.image = image;
     }
 
-    public String getOrderId() {
-
-        return orderId;
+    public String getItemOrder() {
+        return itemOrder;
     }
 
-    public void setOrderId(String orderId) {
-
-        this.orderId = orderId;
+    public void setItemOrder(String itemOrder) {
+        this.itemOrder = itemOrder;
     }
 }

@@ -17,11 +17,18 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.mylaundry.LaundryPerson.LaundryMainActivity;
+import com.example.mylaundry.Model.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.Objects;
 import java.util.regex.Pattern;
@@ -32,6 +39,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     TextView logo , sloganText;
     private FirebaseAuth mAuth;
     private ProgressDialog loadingBar;
+    FirebaseDatabase database;
+    DatabaseReference databaseReference;
+    User userData = new User();
+    String role;
 
 
     @Override
@@ -56,6 +67,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
 
         mAuth = FirebaseAuth.getInstance();
+        database = FirebaseDatabase.getInstance();
+        databaseReference = database.getReference("Users");
+
 
 
         loadingBar = new ProgressDialog(this);
@@ -71,7 +85,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         if(currenUser != null){
 
-            SendUserToMainActivity();
+            sendUserToMainActivity();
         }
 
 
@@ -79,18 +93,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
 
 
-    private void SendUserToMainActivity() {
-        Intent mainIntent = new Intent(this, MainActivity.class);
-        mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(mainIntent);
-        finish();
-    }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.registerButton:
-                Intent registerIntent = new Intent(this, RegisterActivity.class);
+                Intent registerIntent = new Intent(LoginActivity.this, RegisterActivity.class);
+
 
 
                 startActivity(registerIntent);
@@ -157,10 +166,40 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void sendUserToMainActivity() {
-        Intent mainIntent = new Intent(this, MainActivity.class);
-        mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(mainIntent);
-        finish();
+        databaseReference.child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                .addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                         userData = snapshot.getValue(User.class);
+
+                        Intent mainIntent;
+                        if(userData.getRole().equals("Customer")){
+
+
+                            mainIntent = new Intent(LoginActivity.this, MainActivity.class);
+
+
+                        }
+                         else{
+
+                            mainIntent = new Intent(LoginActivity.this, LaundryMainActivity.class);
+
+                        }
+                        mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(mainIntent);
+                        finish();
+
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+                        Toast.makeText(LoginActivity.this , "Unable to Login" , Toast.LENGTH_LONG).show();
+
+                    }
+                });
+        
+
 
 
     }

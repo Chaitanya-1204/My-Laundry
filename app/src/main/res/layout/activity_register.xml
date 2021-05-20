@@ -89,6 +89,7 @@ x
                     android:inputType="textEmailAddress"
                     android:drawablePadding="10dp" />
             </com.google.android.material.textfield.TextInputLayout>
+
             <com.hbb20.CountryCodePicker
                 android:id = "@+id/country_code_picker"
                 android:layout_width = "match_parent"
@@ -143,6 +144,44 @@ x
                     android:drawablePadding="10dp"
                     android:inputType="textPassword" />
             </com.google.android.material.textfield.TextInputLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="5dp">
+                
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ROLE"
+                    android:textSize="25sp"/>
+                
+                <RadioGroup
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginStart="10dp"
+                    android:id="@+id/role"
+                    android:orientation="vertical">
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:text="Customer"
+                        android:id="@+id/role_customer"/>
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Laundry"
+                        android:textSize="15sp"
+                        android:id="@+id/role_laundry"/>
+
+                </RadioGroup>
+                
+            </LinearLayout>
 
 
 

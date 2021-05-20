@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.mylaundry.LaundryPerson.AddOrder;
 import com.example.mylaundry.R;
 
 import java.util.ArrayList;
@@ -71,8 +72,8 @@ public class LaundryHomeFragment extends Fragment {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Intent intent =new Intent(getActivity(), Activity_place_order.class);
-               // startActivity(intent);
+                Intent intent =new Intent(getActivity(), AddOrder.class);
+                startActivity(intent);
                 Toast.makeText(getActivity() , "Add Order" , Toast.LENGTH_LONG).show();
             }
         });
@@ -85,13 +86,13 @@ public class LaundryHomeFragment extends Fragment {
 
         orderList = new ArrayList<>();
 
-        orderList.add(new LaundryHomeModel(R.drawable.bg_post1 , "1" , "$10" , "Washing"));
-        orderList.add(new LaundryHomeModel(R.drawable.bg_post1 , "2" , "$10" , "Ironing"));
-        orderList.add(new LaundryHomeModel(R.drawable.bg_post1 , "3" , "$10" , "Ready"));
-        orderList.add(new LaundryHomeModel(R.drawable.bg_post1 , "4" , "$10" , "Dry Clean"));
-        orderList.add(new LaundryHomeModel(R.drawable.bg_post1 , "5" , "$10" , "Ironing"));
-        orderList.add(new LaundryHomeModel(R.drawable.bg_post1 , "6" , "$10" , "Ironing"));
-        orderList.add(new LaundryHomeModel(R.drawable.bg_post1 , "7" , "$10" , "Ironing"));
+        orderList.add(new LaundryHomeModel(R.drawable.bg_post1 , "1" , "$10"));
+        orderList.add(new LaundryHomeModel(R.drawable.bg_post1 , "2" , "$10" ));
+        orderList.add(new LaundryHomeModel(R.drawable.bg_post1 , "3" , "$10" ));
+        orderList.add(new LaundryHomeModel(R.drawable.bg_post1 , "4" , "$10"));
+        orderList.add(new LaundryHomeModel(R.drawable.bg_post1 , "5" , "$10"));
+        orderList.add(new LaundryHomeModel(R.drawable.bg_post1 , "6" , "$10"));
+        orderList.add(new LaundryHomeModel(R.drawable.bg_post1 , "7" , "$10"));
 
         return orderList;
 

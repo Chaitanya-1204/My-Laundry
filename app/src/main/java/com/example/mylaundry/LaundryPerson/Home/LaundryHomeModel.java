@@ -3,15 +3,16 @@ package com.example.mylaundry.LaundryPerson.Home;
 public class LaundryHomeModel {
     int image;
 
-    String orderId;
+    String itemCount;
     String price;
-    String orderStatus;
 
-    public LaundryHomeModel(int image, String orderId, String price, String orderStatus) {
+
+    public LaundryHomeModel(int image, String price, String itemCount) {
         this.image = image;
-        this.orderId = orderId;
+
         this.price = price;
-        this.orderStatus = orderStatus;
+        this.itemCount = itemCount;
+
     }
 
     public int getImage() {
@@ -22,13 +23,6 @@ public class LaundryHomeModel {
         this.image = image;
     }
 
-    public String getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(String orderId) {
-        this.orderId = orderId;
-    }
 
     public String getPrice() {
         return price;
@@ -38,11 +32,11 @@ public class LaundryHomeModel {
         this.price = price;
     }
 
-    public String getOrderStatus() {
-        return orderStatus;
+    public String getItemCount() {
+        return itemCount;
     }
 
-    public void setOrderStatus(String orderStatus) {
-        this.orderStatus = orderStatus;
+    public void setItemCount(String itemCount) {
+        this.itemCount = itemCount;
     }
 }

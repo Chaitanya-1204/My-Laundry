@@ -73,13 +73,14 @@ public class OrderFragment extends Fragment {
         orderHistoryList = new ArrayList<>();
 
 
-        orderHistoryList.add(new OrderModel(R.drawable.bg_post1 , "1" , "$10" , "Washing"));
-        orderHistoryList.add(new OrderModel(R.drawable.bg_post1 , "2" , "$10" , "Washing"));
-        orderHistoryList.add(new OrderModel(R.drawable.bg_post1 , "3" , "$10" , "Washing"));
-        orderHistoryList.add(new OrderModel(R.drawable.bg_post1 , "4" , "$10" , "Washing"));
-        orderHistoryList.add(new OrderModel(R.drawable.bg_post1 , "5" , "$10" , "Washing"));
-        orderHistoryList.add(new OrderModel(R.drawable.bg_post1 , "6" , "$10" , "Washing"));
-        orderHistoryList.add(new OrderModel(R.drawable.bg_post1 , "7" , "$10" , "Washing"));
+        orderHistoryList.add(new OrderModel(R.drawable.bg_post1 , "1" , "$10"));
+        orderHistoryList.add(new OrderModel(R.drawable.bg_post1 , "1" , "$10"));
+        orderHistoryList.add(new OrderModel(R.drawable.bg_post1 , "1" , "$10"));
+        orderHistoryList.add(new OrderModel(R.drawable.bg_post1 , "1" , "$10"));
+        orderHistoryList.add(new OrderModel(R.drawable.bg_post1 , "1" , "$10"));
+        orderHistoryList.add(new OrderModel(R.drawable.bg_post1 , "1" , "$10"));
+        orderHistoryList.add(new OrderModel(R.drawable.bg_post1 , "1" , "$10"));
+
         return orderHistoryList;
     }
 }

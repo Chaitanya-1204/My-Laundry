@@ -34,8 +34,8 @@ public class LaundryHomeAdapter extends RecyclerView.Adapter<LaundryHomeAdapter.
     @Override
     public void onBindViewHolder(@NonNull LaundryHomeAdapter.ViewHolder holder, int position) {
         holder.orderImage.setImageResource(orderList.get(position).getImage());
-        holder.orderId.setText(orderList.get(position).getOrderId());
-        holder.orderStatus.setText(orderList.get(position).getOrderStatus());
+        holder.orderItemCount.setText(orderList.get(position).getItemCount());
+
         holder.orderPrice.setText(orderList.get(position).getPrice());
 
     }
@@ -49,14 +49,14 @@ public class LaundryHomeAdapter extends RecyclerView.Adapter<LaundryHomeAdapter.
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
         ImageView orderImage;
-        TextView orderId , orderPrice , orderStatus;
+        TextView orderItemCount , orderPrice , orderStatus;
 
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             orderImage = itemView.findViewById(R.id.item_order_image);
-            orderId = itemView.findViewById(R.id.item_order_name);
-            orderStatus = itemView.findViewById(R.id.item_order_status);
+            orderItemCount = itemView.findViewById(R.id.item_order_itemCount);
+
             orderPrice  = itemView.findViewById(R.id.item_order_price);
         }
     }

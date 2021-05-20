@@ -72,13 +72,13 @@ public class    HomeFragment extends Fragment {
 
         orderList = new ArrayList<>();
 
-        orderList.add(new HomeModel(R.drawable.bg_post1 , "1" , "$10" , "Washing"));
-        orderList.add(new HomeModel(R.drawable.bg_post1 , "2" , "$10" , "Ironing"));
-        orderList.add(new HomeModel(R.drawable.bg_post1 , "3" , "$10" , "Ready"));
-        orderList.add(new HomeModel(R.drawable.bg_post1 , "4" , "$10" , "Dry Clean"));
-        orderList.add(new HomeModel(R.drawable.bg_post1 , "5" , "$10" , "Ironing"));
-        orderList.add(new HomeModel(R.drawable.bg_post1 , "6" , "$10" , "Ironing"));
-        orderList.add(new HomeModel(R.drawable.bg_post1 , "7" , "$10" , "Ironing"));
+        orderList.add(new HomeModel(R.drawable.bg_post1 , "1" , "$10"));
+        orderList.add(new HomeModel(R.drawable.bg_post1 , "2" , "$10"));
+        orderList.add(new HomeModel(R.drawable.bg_post1 , "3" , "$10"));
+        orderList.add(new HomeModel(R.drawable.bg_post1 , "4" , "$10"));
+        orderList.add(new HomeModel(R.drawable.bg_post1 , "5" , "$10"));
+        orderList.add(new HomeModel(R.drawable.bg_post1 , "6" , "$10"));
+        orderList.add(new HomeModel(R.drawable.bg_post1 , "7" , "$10"));
         return orderList;
 
 

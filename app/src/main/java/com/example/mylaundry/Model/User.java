@@ -5,19 +5,33 @@ public class User {
 
     private String phoneNumber;
 
+
+
     private String email;
     private String password;
+    private String role;
 
 
-    public User(String fullName, String phoneNumber, String email, String password) {
+    public User(String fullName, String phoneNumber, String email, String password , String role) {
         this.fullName = fullName;
         this.phoneNumber = phoneNumber;
         this.email = email;
         this.password = password;
+        this.role = role;
     }
 
     public User() {
 
+    }
+
+    public String getRole() {
+
+        return role;
+    }
+
+    public void setRole(String role) {
+
+        this.role = role;
     }
 
     public String getFullName() {

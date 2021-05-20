@@ -12,35 +12,31 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyLaundry">
-        <activity android:name=".LaundryPerson.LaundrySplashActivity"
+        <activity android:name=".LaundryPerson.AddOrder"></activity>
+        <activity
+            android:name=".LaundryPerson.LaundryContactUs"
+            android:theme="@style/Theme.Design.NoActionBar"></activity>
+        <activity
+            android:name=".LaundryPerson.LaundryFaq"
+            android:theme="@style/Theme.Design.NoActionBar" />
+        <activity
+            android:name=".LaundryPerson.LaundryMyAccount"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
+        <activity
+            android:name=".LaundryPerson.LaundryMainActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".otpVerification"
+            android:theme="@style/Theme.Design.NoActionBar" />
+        <activity
+            android:name=".SplashActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
-
-        </activity>
-        <activity android:name=".LaundryPerson.LaundryMainActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
-
-        </activity>
-        <activity android:name=".LaundryPerson.LaundryRegistrationActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-
-        </activity>
-        <activity android:name=".LaundryPerson.LaundryLoginActivity"
-            android:theme="@style/Theme.Design.NoActionBar">
-
-        </activity>
-        <activity android:name=".Common.SelectUser">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".otpVerification"
-            android:theme="@style/Theme.Design.NoActionBar" />
-        <activity
-            android:name=".SplashActivity"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity
             android:name=".MyAccount"
             android:label="My Profile"

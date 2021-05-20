@@ -35,8 +35,8 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull OrderAdapter.ViewHolder holder, int position) {
         holder.orderImage.setImageResource(orderHistoryList.get(position).getImage());
-        holder.orderId.setText(orderHistoryList.get(position).getOrderId());
-        holder.orderStatus.setText(orderHistoryList.get(position).getOrderStatus());
+        holder.orderItemCount.setText(orderHistoryList.get(position).getItemCount());
+
         holder.orderPrice.setText(orderHistoryList.get(position).getPrice());
 
     }
@@ -49,13 +49,13 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> 
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView orderImage;
-        TextView orderId , orderPrice , orderStatus;
+        TextView orderItemCount , orderPrice;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             orderImage = itemView.findViewById(R.id.item_order_image);
-            orderId = itemView.findViewById(R.id.item_order_name);
-            orderStatus = itemView.findViewById(R.id.item_order_status);
+            orderItemCount = itemView.findViewById(R.id.item_order_itemCount);
+
             orderPrice  = itemView.findViewById(R.id.item_order_price);
         }
     }
