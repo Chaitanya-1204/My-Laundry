@@ -1,6 +1,7 @@
 package com.example.mylaundry.LaundryPerson;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -9,23 +10,34 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.airbnb.lottie.L;
+import com.example.mylaundry.Model.User;
 import com.example.mylaundry.Model.addOrderData;
 import com.example.mylaundry.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class AddOrder extends AppCompatActivity {
 
     FirebaseDatabase database;
-    DatabaseReference databaseReference;
+    DatabaseReference databaseReference , databaseReference1 , databaseReference2;
     EditText customerName , phoneNumber , shirts , pants , bedSheets , extras;
     Button placeOrder;
     addOrderData orderData;
+    User userData = new User();
+    long laundryPersonOrderCount , customerOrderCount;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +57,9 @@ public class AddOrder extends AppCompatActivity {
 
 
         database =FirebaseDatabase.getInstance();
-        databaseReference = database.getReference("Laundry Active Order");
+        databaseReference = database.getReference("Laundry-Active-Order");
+        databaseReference1 = database.getReference("Customer-Active-Order");
+
         placeOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -55,10 +69,8 @@ public class AddOrder extends AppCompatActivity {
                 String pant = pants.getText().toString().trim();
                 String extra = extras.getText().toString().trim();
                 String bedsheet = bedSheets.getText().toString().trim();
-                Random r = new Random();
-                int  orderId = r.nextInt(1000 + 1);
-               
-                String s = Integer.toString(orderId);
+
+
 
 
                 orderData.setCustomerName(customer);
@@ -71,29 +83,34 @@ public class AddOrder extends AppCompatActivity {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
                 databaseReference.child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                        .child(s)
+                        .child(phone)
+
                         .setValue(orderData);
-                Toast.makeText(AddOrder.this , "Placed order" , Toast.LENGTH_LONG).show();
+                databaseReference1.child(phone)
+
+
+                        .setValue(orderData);
+
+                Toast.makeText(AddOrder.this, "Placed order", Toast.LENGTH_SHORT).show();
 
 
 
-                /*
-                databaseReference.child(phone)
-                        .setValue(orderData).addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        if(task.isSuccessful()){
-                            Toast.makeText(AddOrder.this , "Placed Order" , Toast.LENGTH_SHORT).show();
 
-                        }
-                        else{
-                            Toast.makeText(AddOrder.this , "Placed not  Order" , Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
 
-                 */
+
+
 
 
             }

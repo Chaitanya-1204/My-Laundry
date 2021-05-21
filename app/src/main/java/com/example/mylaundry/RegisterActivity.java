@@ -38,7 +38,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     private ProgressDialog loadingBar;
 
     private FirebaseAuth mAuth;
-    private DatabaseReference databaseReference;
+    private DatabaseReference databaseReference , databaseReference1 , databaseReference2;
     User userInfo = new User();
     String wUser;
 
@@ -82,6 +82,8 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         mAuth = FirebaseAuth.getInstance();
         FirebaseDatabase dataBase = FirebaseDatabase.getInstance();
         databaseReference = dataBase.getReference("Users");
+        databaseReference1 = dataBase.getReference("Customer");
+        databaseReference2 = dataBase.getReference("Laundry Person");
 
         userInfo = new User();
 
@@ -155,6 +157,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         String fullName = FullName.getText().toString().trim();
         String password = Password.getText().toString().trim();
         String phone_number = Phone.getText().toString().trim();
+        String role = selectedRoleButton.getText().toString().trim();
 
 
         if(!validateName() ||  !validateEmail() || !validatePhoneNumber() || !validatePassword()){
@@ -176,6 +179,16 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                             userInfo.setFullName(fullName);
                             userInfo.setPassword(password);
                             userInfo.setRole((String) selectedRoleButton.getText());
+                            if(selectedRoleButton.getText().toString().equals("Customer")){
+                                databaseReference1.child(phone_number).setValue(userInfo);
+                                Toast.makeText(RegisterActivity.this , "Customer!!" , Toast.LENGTH_SHORT).show();
+
+                            }
+                            else{
+                                databaseReference2.child(phone_number).setValue(userInfo);
+                            }
+
+
                             databaseReference
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                     .setValue(userInfo).addOnCompleteListener(new OnCompleteListener<Void>() {

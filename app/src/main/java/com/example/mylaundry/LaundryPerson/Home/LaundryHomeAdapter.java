@@ -1,5 +1,6 @@
 package com.example.mylaundry.LaundryPerson.Home;
 
+import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,56 +10,50 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.mylaundry.Model.addOrderData;
 import com.example.mylaundry.R;
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
+
+import org.w3c.dom.Text;
 
 import java.util.List;
 
-public class LaundryHomeAdapter extends RecyclerView.Adapter<LaundryHomeAdapter.ViewHolder> {
+public class LaundryHomeAdapter extends FirebaseRecyclerAdapter<addOrderData , LaundryHomeAdapter.myViewHolder  > {
     List<LaundryHomeModel> orderList;
 
-    public LaundryHomeAdapter(List<LaundryHomeModel> orderList) {
-        this.orderList = orderList;
+
+    public LaundryHomeAdapter(@NonNull FirebaseRecyclerOptions<addOrderData> options) {
+        super(options);
+
+    }
+
+    @Override
+    protected void onBindViewHolder(@NonNull myViewHolder holder, int position, @NonNull addOrderData model) {
+
+        holder.imageView.setImageResource(R.drawable.bg_post1);
+        holder.itemCount.setText(model.getBedSheet());
+        holder.price.setText(model.getShirts());
 
     }
 
     @NonNull
     @Override
-    public LaundryHomeAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public myViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_item_orders , parent , false);
-        ViewHolder viewHolder = new ViewHolder(view);
-        return viewHolder;
-
+        View view  = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_item_orders , parent , false) ;
+        return new myViewHolder(view);
     }
 
-    @Override
-    public void onBindViewHolder(@NonNull LaundryHomeAdapter.ViewHolder holder, int position) {
-        holder.orderImage.setImageResource(orderList.get(position).getImage());
-        holder.orderItemCount.setText(orderList.get(position).getItemCount());
-
-        holder.orderPrice.setText(orderList.get(position).getPrice());
-
-    }
-
-    @Override
-    public int getItemCount() {
-
-        return orderList.size();
-    }
-
-    public static class ViewHolder extends RecyclerView.ViewHolder {
-
-        ImageView orderImage;
-        TextView orderItemCount , orderPrice , orderStatus;
-
-
-        public ViewHolder(@NonNull View itemView) {
-            super(itemView);
-            orderImage = itemView.findViewById(R.id.item_order_image);
-            orderItemCount = itemView.findViewById(R.id.item_order_itemCount);
-
-            orderPrice  = itemView.findViewById(R.id.item_order_price);
-        }
-    }
+    static class  myViewHolder extends RecyclerView.ViewHolder{
+       ImageView imageView;
+       TextView price, itemCount;
+       public myViewHolder(@NonNull View itemView) {
+           super(itemView);
+           imageView = itemView.findViewById(R.id.item_order_image);
+           price = itemView.findViewById(R.id.item_order_price);
+           itemCount = itemView.findViewById(R.id.item_order_itemCount);
+       }
+   }
 }
 

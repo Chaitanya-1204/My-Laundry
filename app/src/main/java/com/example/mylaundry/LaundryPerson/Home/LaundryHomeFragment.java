@@ -1,5 +1,6 @@
 package com.example.mylaundry.LaundryPerson.Home;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -14,7 +15,11 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.mylaundry.LaundryPerson.AddOrder;
+import com.example.mylaundry.Model.addOrderData;
 import com.example.mylaundry.R;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -55,16 +60,28 @@ public class LaundryHomeFragment extends Fragment {
     }
     RecyclerView recyclerView;
     List <LaundryHomeModel> orderList;
-
+    LaundryHomeAdapter laundryHomeAdapter;
+    private ProgressDialog loadingBar;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_laundry_home, container, false);
+
+
         recyclerView = view.findViewById(R.id.laundry_recycler_active_order);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
+
         recyclerView.setNestedScrollingEnabled(true);
+
+        FirebaseRecyclerOptions<addOrderData> options =
+                new FirebaseRecyclerOptions.Builder<addOrderData>()
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Laundry-Active-Order").child(FirebaseAuth.getInstance().getCurrentUser().getUid()), addOrderData.class)
+                        .build();
+
+        laundryHomeAdapter = new LaundryHomeAdapter(options);
+        recyclerView.setAdapter(laundryHomeAdapter);
 
         // initializeData();
 
@@ -77,7 +94,9 @@ public class LaundryHomeFragment extends Fragment {
                 Toast.makeText(getActivity() , "Add Order" , Toast.LENGTH_LONG).show();
             }
         });
-        recyclerView.setAdapter(new LaundryHomeAdapter(initializeData()));
+
+
+
         return view;
     }
 
@@ -99,4 +118,16 @@ public class LaundryHomeFragment extends Fragment {
 
 
     }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        laundryHomeAdapter.startListening();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        laundryHomeAdapter.stopListening();
+    }
+
 }
