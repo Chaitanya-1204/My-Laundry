@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
 
-import com.example.mylaundry.LaundryPerson.Home.LaundryHomeFragment;
+import com.example.mylaundry.LaundryPerson.Home.LuandryHomeFragment1;
 import com.example.mylaundry.LaundryPerson.More.LaundryMoreFragment;
 import com.example.mylaundry.LaundryPerson.Order.LaundryOrderFragment;
 import com.example.mylaundry.R;
@@ -24,7 +24,7 @@ public class LaundryMainActivity extends AppCompatActivity {
 
         bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.laundry_fragment_container, new LaundryHomeFragment()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.laundry_fragment_container, new LuandryHomeFragment1()).commit();
     }
 
     private final BottomNavigationView.OnNavigationItemSelectedListener navListener = item -> {
@@ -32,7 +32,7 @@ public class LaundryMainActivity extends AppCompatActivity {
         Fragment selectedFragment = null;
         switch (item.getItemId()) {
             case R.id.nav_menu_home:
-                selectedFragment = new LaundryHomeFragment();
+                selectedFragment = new LuandryHomeFragment1();
                 break;
             case R.id.nav_menu_orders:
                 selectedFragment = new LaundryOrderFragment();

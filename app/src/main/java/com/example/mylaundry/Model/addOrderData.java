@@ -4,21 +4,51 @@ public class addOrderData {
     private String customerName;
     private String phoneNumber;
 
-    private String bedSheet , shirts , pants , extra;
+    private String bedSheet , shirts , pants , extra , price ,itemCount;
+    private String imageUrl;
 
 
 
 
-    public addOrderData(String customerName, String phoneNumber, String bedSheet , String shirts , String pants , String extra) {
+
+    public addOrderData(String customerName, String phoneNumber, String bedSheet , String shirts , String pants , String extra , String imageUrl , String price , String itemCount) {
         this.customerName = customerName;
         this.phoneNumber = phoneNumber;
         this.shirts = shirts;
         this.pants = pants;
         this.bedSheet = bedSheet;
         this.extra = extra;
+        this.imageUrl = imageUrl;
+        this.price = price;
+        this.itemCount = itemCount;
     }
     public addOrderData(){
 
+    }
+
+
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
+    }
+
+    public String getItemCount() {
+        return itemCount;
+    }
+
+    public void setItemCount(String itemCount) {
+        this.itemCount = itemCount;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public String getCustomerName() {
