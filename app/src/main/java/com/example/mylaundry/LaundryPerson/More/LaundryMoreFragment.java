@@ -87,7 +87,6 @@ public class LaundryMoreFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                FirebaseAuth.getInstance().signOut();
                 startActivity(new Intent(getActivity() , LaundryContactUs.class));
 
 
@@ -99,7 +98,7 @@ public class LaundryMoreFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                FirebaseAuth.getInstance().signOut();
+
                 startActivity(new Intent(getActivity() , LaundryFaq.class));
 
 

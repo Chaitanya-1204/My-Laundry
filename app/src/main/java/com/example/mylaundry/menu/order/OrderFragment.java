@@ -11,8 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.mylaundry.R;
-import com.example.mylaundry.menu.home.HomeAdapter;
-import com.example.mylaundry.menu.home.HomeModel;
 
 import java.util.ArrayList;
 import java.util.List;

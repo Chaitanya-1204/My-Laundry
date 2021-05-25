@@ -2,6 +2,7 @@ package com.example.mylaundry.menu.more;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.media.session.PlaybackState;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -13,6 +14,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.mylaundry.CustomerContactUs;
+import com.example.mylaundry.CustomerFaq;
+import com.example.mylaundry.LaundryPerson.LaundryContactUs;
+import com.example.mylaundry.LaundryPerson.LaundryFaq;
 import com.example.mylaundry.LoginActivity;
 import com.example.mylaundry.MyAccount;
 import com.example.mylaundry.R;
@@ -21,7 +26,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 
 public class MoreFragment extends Fragment {
-    private LinearLayout myAccount , signOut;
+    private LinearLayout myAccount , signOut ,Faq , ContactUs;
     private ProgressDialog loadingBar;
 
 
@@ -81,6 +86,31 @@ public class MoreFragment extends Fragment {
             }
         }));
 
+        ContactUs = (LinearLayout) view.findViewById(R.id.contactUs);
+        ContactUs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                startActivity(new Intent(getActivity() , CustomerContactUs.class));
+
+
+            }
+        });
+
+        Faq = (LinearLayout) view.findViewById(R.id.help);
+        Faq.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                startActivity(new Intent(getActivity() , CustomerFaq.class));
+
+
+
+
+            }
+        });
         signOut = (LinearLayout) view.findViewById(R.id.signOut);
         signOut.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -19,6 +19,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.Objects;
+
 
 public class LuandryHomeFragment1 extends Fragment {
 
@@ -62,7 +64,7 @@ public class LuandryHomeFragment1 extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_luandry_home1, container, false);
         recyclerView = view.findViewById(R.id.laundry_recycler_active_order);
-        databaseReference = FirebaseDatabase.getInstance().getReference("Laundry-Active-Order").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
+        databaseReference = FirebaseDatabase.getInstance().getReference("Laundry-Active-Order").child(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid());
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         FirebaseRecyclerOptions<activeOrder> options
                 = new FirebaseRecyclerOptions.Builder<activeOrder>()

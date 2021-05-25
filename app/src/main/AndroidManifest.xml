@@ -12,18 +12,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyLaundry">
-        <activity android:name=".LaundryPerson.AddOrder">
-
-        </activity>
+        <activity android:name=".LaundryPerson.OrderHistoryDetail"></activity>
+        <activity android:name=".LaundryPerson.OrderDetail"></activity>
+        <activity android:name=".CustomerContactUs" />
+        <activity android:name=".CustomerFaq" />
+        <activity android:name=".LaundryPerson.AddOrder" />
         <activity
             android:name=".LaundryPerson.LaundryContactUs"
-            android:theme="@style/Theme.Design.NoActionBar">
-
-        </activity>
+            android:theme="@style/Theme.Design.NoActionBar" />
         <activity
             android:name=".LaundryPerson.LaundryFaq"
             android:theme="@style/Theme.Design.NoActionBar" />
-x
         <activity
             android:name=".LaundryPerson.LaundryMyAccount"
             android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />

@@ -2,6 +2,7 @@ package com.example.mylaundry.LaundryPerson.Order;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -9,14 +10,31 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
+import com.example.mylaundry.LaundryPerson.Home.LaundryActiveOrderAdapter;
+import com.example.mylaundry.LaundryPerson.Home.activeOrder;
 import com.example.mylaundry.R;
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 
 public class LaundryOrderFragment extends Fragment {
+    DatabaseReference databaseReference;
+    RecyclerView recyclerView;
+    LaundryOrderHistoryAdapter orderHistoryAdapter;
+
+
 
 
     private static final String ARG_PARAM1 = "param1";
@@ -28,6 +46,7 @@ public class LaundryOrderFragment extends Fragment {
 
     public LaundryOrderFragment() {
         // Required empty public constructor
+
     }
 
 
@@ -49,41 +68,46 @@ public class LaundryOrderFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
-    RecyclerView recyclerView;
-    List<LaundryOrderModel> orderHistoryList;
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_laundry_order, container, false);
         recyclerView = view.findViewById(R.id.laundry_recycler_order_history);
-        recyclerView.setHasFixedSize(true);
+        databaseReference = FirebaseDatabase.getInstance().getReference("Laundry-Order-History").child(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid());
+
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        recyclerView.setNestedScrollingEnabled(true);
+        FirebaseRecyclerOptions<orderHistory> options
+                = new FirebaseRecyclerOptions.Builder<orderHistory>()
+                .setQuery(databaseReference, orderHistory.class)
+                .build();
+        orderHistoryAdapter = new LaundryOrderHistoryAdapter(options);
+         recyclerView.setAdapter(orderHistoryAdapter);
 
-        // initializeData();
-        recyclerView.setAdapter(new LaundryOrderAdapter(initializeData()));
+
+
         return view;
     }
-    private List<LaundryOrderModel> initializeData() {
-        orderHistoryList = new ArrayList<>();
+
+    @Override
+    public void onStart()
+    {
+        super.onStart();
 
 
-        orderHistoryList.add(new LaundryOrderModel(R.drawable.bg_post1 , "1" , "$10" ));
-
-        orderHistoryList.add(new LaundryOrderModel(R.drawable.bg_post1 , "1" , "$10" ));
-
-        orderHistoryList.add(new LaundryOrderModel(R.drawable.bg_post1 , "1" , "$10" ));
-
-        orderHistoryList.add(new LaundryOrderModel(R.drawable.bg_post1 , "1" , "$10" ));
-
-        orderHistoryList.add(new LaundryOrderModel(R.drawable.bg_post1 , "1" , "$10" ));
-
-        orderHistoryList.add(new LaundryOrderModel(R.drawable.bg_post1 , "1" , "$10" ));
-        orderHistoryList.add(new LaundryOrderModel(R.drawable.bg_post1 , "1" , "$10" ));
-
-
-        return orderHistoryList;
+         orderHistoryAdapter.startListening();
     }
+    @Override
+    public void onStop()
+    {
+        super.onStop();
+
+        orderHistoryAdapter.stopListening();
+    }
+
+
+
 }

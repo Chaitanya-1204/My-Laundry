@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".LaundryPerson.OrderDetail"
+    android:background="@color/white_smoke">
+
+
+    <TextView
+        android:id="@+id/laundry_order_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/nunito_black"
+        android:text="Order Details"
+        android:textColor="@color/dark_late_gray"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:layout_marginLeft="20dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:textSize="20sp"
+        android:textColor="@color/dark_late_gray"
+        android:id="@+id/customer_name"
+
+        android:text="Customer Name"/>
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:textSize="20sp"
+        android:textColor="@color/dark_late_gray"
+        android:id="@+id/Customer_phone_number"
+        android:text="Phone No"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:textSize="20sp"
+        android:id="@+id/customer_shirt"
+        android:textColor="@color/dark_late_gray"
+        android:text="Shirts"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:textSize="20sp"
+        android:id="@+id/customer_pant"
+        android:textColor="@color/dark_late_gray"
+
+        android:text="Pants"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:textSize="20sp"
+        android:id="@+id/customer_bedsheet"
+        android:textColor="@color/dark_late_gray"
+
+        android:text="Bedsheet"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:textSize="20sp"
+        android:id="@+id/customer_extra"
+        android:textColor="@color/dark_late_gray"
+        android:text="Extra"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:textSize="20sp"
+        android:id="@+id/customer_itemCount"
+        android:textColor="@color/dark_late_gray"
+        android:text="Item Count"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:textSize="20sp"
+        android:id="@+id/customer_price"
+        android:textColor="@color/dark_late_gray"
+        android:text="Price"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Order Completed"
+        android:id="@+id/order_completed"
+        android:layout_margin="20dp"
+        android:textColor="@color/white_smoke"
+        android:background="#000000"/>
+
+
+
+
+
+
+
+
+
+
+</LinearLayout>

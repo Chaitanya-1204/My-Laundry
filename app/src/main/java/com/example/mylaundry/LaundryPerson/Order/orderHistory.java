@@ -1,13 +1,11 @@
-package com.example.mylaundry.LaundryPerson.Home;
+package com.example.mylaundry.LaundryPerson.Order;
 
-public class activeOrder{
+public class orderHistory {
     String imageUrl;
     String shirts  , pants , extra , bedSheet , price , itemCount, customerName , phoneNumber;
 
-    public activeOrder() {
-    }
+    public orderHistory(String imageUrl, String shirts, String pants, String extra, String bedSheet, String price, String itemCount, String customerName, String phoneNumber) {
 
-    public activeOrder(String imageUrl, String shirts, String pants, String extra, String bedSheet, String price, String itemCount, String customerName, String phoneNumber) {
         this.imageUrl = imageUrl;
         this.shirts = shirts;
         this.pants = pants;
@@ -17,23 +15,9 @@ public class activeOrder{
         this.itemCount = itemCount;
         this.customerName = customerName;
         this.phoneNumber = phoneNumber;
-
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
-    public String getCustomerName() {
-        return customerName;
-    }
-
-    public void setCustomerName(String customerName) {
-        this.customerName = customerName;
+    public orderHistory() {
     }
 
     public String getImageUrl() {
@@ -91,5 +75,20 @@ public class activeOrder{
     public void setItemCount(String itemCount) {
         this.itemCount = itemCount;
     }
-}
 
+    public String getCustomerName() {
+        return customerName;
+    }
+
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+}

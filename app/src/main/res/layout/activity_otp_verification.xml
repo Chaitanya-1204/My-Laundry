@@ -55,7 +55,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="40dp"
             app:lineColor="@color/black"
-            android:itemBackground="#fff"
+            android:itemBackground="#65EAEAEA"
             style="@style/PinWidget.PinView"
             android:inputType="number"
             android:cursorVisible="true"
@@ -72,6 +72,13 @@
             android:onClick="callMainActivity"
             android:text="Verify"/>
 
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animationView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:lottie_url="https://assets10.lottiefiles.com/packages/lf20_iZXXuz.jsonL"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"/>
 
 
     </LinearLayout>

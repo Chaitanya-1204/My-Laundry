@@ -1,4 +1,4 @@
-package com.example.mylaundry.LaundryPerson;
+package com.example.mylaundry;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,20 +10,19 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.mylaundry.R;
+import com.example.mylaundry.LaundryPerson.LaundryContactUs;
 
-public class LaundryContactUs extends AppCompatActivity {
+public class CustomerContactUs extends AppCompatActivity {
     EditText et_subject,et_message;
     Button btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_laundry_contact_us);
-
-        et_subject = findViewById(R.id.email_subject);
-        et_message = findViewById(R.id.email_message);
-        btn = findViewById(R.id.email_send);
+        setContentView(R.layout.activity_customer_contact_us);
+        et_subject = findViewById(R.id.customer_email_subject);
+        et_message = findViewById(R.id.customer_email_message);
+        btn = findViewById(R.id.customer_email_send);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -32,11 +31,11 @@ public class LaundryContactUs extends AppCompatActivity {
                 String email = "abhishek8602314652@gmail.com";
                 if(subject.isEmpty())
                 {
-                    Toast.makeText(LaundryContactUs.this, "Please add Subject", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CustomerContactUs.this, "Please add Subject", Toast.LENGTH_SHORT).show();
                 }
                 else if(message.isEmpty())
                 {
-                    Toast.makeText(LaundryContactUs.this, "Please add some Message", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CustomerContactUs.this, "Please add some Message", Toast.LENGTH_SHORT).show();
                 }
                 else
                 {
@@ -50,7 +49,7 @@ public class LaundryContactUs extends AppCompatActivity {
                     }
                     catch (Exception e)
                     {
-                        Toast.makeText(LaundryContactUs.this, "Exception: "+e.getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(CustomerContactUs.this, "Exception: "+e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 }
             }
@@ -59,10 +58,5 @@ public class LaundryContactUs extends AppCompatActivity {
 
 
 
-
-
-
-
     }
-
-}
+    }

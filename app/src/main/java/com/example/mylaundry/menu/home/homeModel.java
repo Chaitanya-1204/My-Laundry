@@ -1,13 +1,13 @@
-package com.example.mylaundry.LaundryPerson.Home;
+package com.example.mylaundry.menu.home;
 
-public class activeOrder{
+public class homeModel {
     String imageUrl;
-    String shirts  , pants , extra , bedSheet , price , itemCount, customerName , phoneNumber;
+    String shirts  , pants , extra , bedSheet , price , itemCount, customerName;
 
-    public activeOrder() {
+    public homeModel() {
     }
 
-    public activeOrder(String imageUrl, String shirts, String pants, String extra, String bedSheet, String price, String itemCount, String customerName, String phoneNumber) {
+    public homeModel(String imageUrl, String shirts, String pants, String extra, String bedSheet, String price, String itemCount, String customerName) {
         this.imageUrl = imageUrl;
         this.shirts = shirts;
         this.pants = pants;
@@ -16,16 +16,7 @@ public class activeOrder{
         this.price = price;
         this.itemCount = itemCount;
         this.customerName = customerName;
-        this.phoneNumber = phoneNumber;
 
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
     }
 
     public String getCustomerName() {
@@ -92,4 +83,3 @@ public class activeOrder{
         this.itemCount = itemCount;
     }
 }
-
