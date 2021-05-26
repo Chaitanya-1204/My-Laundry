@@ -59,6 +59,7 @@ public class AddOrder extends AppCompatActivity {
 
 
         database =FirebaseDatabase.getInstance();
+        databaseReference2 = database.getReference("Users");
         databaseReference = database.getReference("Laundry-Active-Order");
         databaseReference1 = database.getReference("Customer-Active-Order");
 
@@ -69,11 +70,11 @@ public class AddOrder extends AppCompatActivity {
                 String phone = phoneNumber.getText().toString().trim();
                 String shirt , extra , pant , bedsheet;
                 if(shirts.getText().toString().isEmpty()){
-                     shirt = "0";
+                    shirt = "0";
                 }
                 else{
 
-                     shirt = shirts.getText().toString().trim();
+                    shirt = shirts.getText().toString().trim();
                 }
 
                 if(pants.getText().toString().isEmpty()){
@@ -86,7 +87,7 @@ public class AddOrder extends AppCompatActivity {
 
 
                 if(extras.getText().toString().isEmpty()){
-                     extra = "0";
+                    extra = "0";
                 }
                 else{
                     extra = extras.getText().toString().trim();
@@ -114,6 +115,9 @@ public class AddOrder extends AppCompatActivity {
 
 
 
+
+
+
                 orderData.setCustomerName(customer);
                 orderData.setPhoneNumber(phone);
                 orderData.setShirts(shirt);
@@ -128,30 +132,38 @@ public class AddOrder extends AppCompatActivity {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
                 databaseReference.child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                         .child(phone)
                         .setValue(orderData);
 
                 databaseReference1.child(phone)
+                        .child(phone)
                         .setValue(orderData);
+
 
 
                 Toast.makeText(AddOrder.this, "Placed order", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(AddOrder.this , LaundryMainActivity.class));
                 finish();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

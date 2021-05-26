@@ -11,12 +11,18 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.mylaundry.R;
+import com.example.mylaundry.menu.home.homeModel;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
 public class OrderFragment extends Fragment {
+    private  String phone;
+
 
 
     private static final String ARG_PARAM1 = "param1";
@@ -49,36 +55,45 @@ public class OrderFragment extends Fragment {
     }
 
     RecyclerView recyclerView;
-    List<OrderModel> orderHistoryList;
+    DatabaseReference mRef;
+    OrderAdapter orderAdapter;
+
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_order, container, false);
+        phone = getArguments().getString("phoneNumber");
+        mRef = FirebaseDatabase.getInstance().getReference().child("Customer-Order-History").child(phone);
         recyclerView = view.findViewById(R.id.recycler_order_history);
-        recyclerView.setHasFixedSize(true);
+
+
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        recyclerView.setNestedScrollingEnabled(true);
+        FirebaseRecyclerOptions<OrderModel> options
+                = new FirebaseRecyclerOptions.Builder<OrderModel>()
+                .setQuery(mRef, OrderModel.class)
+                .build();
 
-        // initializeData();
-        recyclerView.setAdapter(new OrderAdapter(initializeData()));
+        orderAdapter = new OrderAdapter(options);
+        recyclerView.setAdapter(orderAdapter);
+
+
         return view;
     }
-
-    private List<OrderModel> initializeData() {
-        orderHistoryList = new ArrayList<>();
-
-
-        orderHistoryList.add(new OrderModel(R.drawable.bg_post1 , "1" , "$10"));
-        orderHistoryList.add(new OrderModel(R.drawable.bg_post1 , "1" , "$10"));
-        orderHistoryList.add(new OrderModel(R.drawable.bg_post1 , "1" , "$10"));
-        orderHistoryList.add(new OrderModel(R.drawable.bg_post1 , "1" , "$10"));
-        orderHistoryList.add(new OrderModel(R.drawable.bg_post1 , "1" , "$10"));
-        orderHistoryList.add(new OrderModel(R.drawable.bg_post1 , "1" , "$10"));
-        orderHistoryList.add(new OrderModel(R.drawable.bg_post1 , "1" , "$10"));
-
-        return orderHistoryList;
+    @Override
+    public void onStart()
+    {
+        super.onStart();
+        orderAdapter.startListening();
     }
+
+    @Override public void onStop()
+    {
+        super.onStop();
+        orderAdapter.stopListening();
+    }
+
+
 }

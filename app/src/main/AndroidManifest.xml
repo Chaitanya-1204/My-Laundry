@@ -12,8 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyLaundry">
-        <activity android:name=".LaundryPerson.OrderHistoryDetail"></activity>
-        <activity android:name=".LaundryPerson.OrderDetail"></activity>
+        <activity android:name=".CustomerOrderHistory"></activity>
+        <activity android:name=".CutomerOrderDetail" />
+        <activity android:name=".LaundryPerson.OrderHistoryDetail" />
+        <activity android:name=".LaundryPerson.OrderDetail" />
         <activity android:name=".CustomerContactUs" />
         <activity android:name=".CustomerFaq" />
         <activity android:name=".LaundryPerson.AddOrder" />

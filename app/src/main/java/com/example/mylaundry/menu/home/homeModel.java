@@ -1,62 +1,21 @@
 package com.example.mylaundry.menu.home;
 
 public class homeModel {
-    String imageUrl;
-    String shirts  , pants , extra , bedSheet , price , itemCount, customerName;
+    String bedSheet , customerName , extra ,imageUrl , itemCount , pants , phoneNumber , price , shirts;
+
+    public homeModel(String bedSheet, String customerName, String extra, String imageUrl, String itemCount, String pants, String phoneNumber, String price, String shirts) {
+        this.bedSheet = bedSheet;
+        this.customerName = customerName;
+        this.extra = extra;
+        this.imageUrl = imageUrl;
+        this.itemCount = itemCount;
+        this.pants = pants;
+        this.phoneNumber = phoneNumber;
+        this.price = price;
+        this.shirts = shirts;
+    }
 
     public homeModel() {
-    }
-
-    public homeModel(String imageUrl, String shirts, String pants, String extra, String bedSheet, String price, String itemCount, String customerName) {
-        this.imageUrl = imageUrl;
-        this.shirts = shirts;
-        this.pants = pants;
-        this.extra = extra;
-        this.bedSheet = bedSheet;
-        this.price = price;
-        this.itemCount = itemCount;
-        this.customerName = customerName;
-
-    }
-
-    public String getCustomerName() {
-        return customerName;
-    }
-
-    public void setCustomerName(String customerName) {
-        this.customerName = customerName;
-    }
-
-    public String getImageUrl() {
-        return imageUrl;
-    }
-
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
-    }
-
-    public String getShirts() {
-        return shirts;
-    }
-
-    public void setShirts(String shirts) {
-        this.shirts = shirts;
-    }
-
-    public String getPants() {
-        return pants;
-    }
-
-    public void setPants(String pants) {
-        this.pants = pants;
-    }
-
-    public String getExtra() {
-        return extra;
-    }
-
-    public void setExtra(String extra) {
-        this.extra = extra;
     }
 
     public String getBedSheet() {
@@ -67,12 +26,28 @@ public class homeModel {
         this.bedSheet = bedSheet;
     }
 
-    public String getPrice() {
-        return price;
+    public String getCustomerName() {
+        return customerName;
     }
 
-    public void setPrice(String price) {
-        this.price = price;
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
+    }
+
+    public String getExtra() {
+        return extra;
+    }
+
+    public void setExtra(String extra) {
+        this.extra = extra;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public String getItemCount() {
@@ -81,5 +56,37 @@ public class homeModel {
 
     public void setItemCount(String itemCount) {
         this.itemCount = itemCount;
+    }
+
+    public String getPants() {
+        return pants;
+    }
+
+    public void setPants(String pants) {
+        this.pants = pants;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
+    }
+
+    public String getShirts() {
+        return shirts;
+    }
+
+    public void setShirts(String shirts) {
+        this.shirts = shirts;
     }
 }

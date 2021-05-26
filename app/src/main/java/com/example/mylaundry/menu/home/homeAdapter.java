@@ -1,4 +1,4 @@
-package com.example.mylaundry.menu.order;
+package com.example.mylaundry.menu.home;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,20 +12,22 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.mylaundry.CustomerOrderHistory;
+import com.example.mylaundry.CutomerOrderDetail;
+import com.example.mylaundry.LaundryPerson.OrderDetail;
 import com.example.mylaundry.R;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 
-public class OrderAdapter extends FirebaseRecyclerAdapter<OrderModel, OrderAdapter.orderViewHolder> {
-
+public class homeAdapter extends FirebaseRecyclerAdapter<homeModel , homeAdapter.orderViewHolder> {
     private Context mContext;
-    public OrderAdapter(@NonNull FirebaseRecyclerOptions<OrderModel> options) {
+
+
+    public homeAdapter(@NonNull FirebaseRecyclerOptions<homeModel> options) {
         super(options);
     }
 
     @Override
-    protected void onBindViewHolder(@NonNull orderViewHolder holder, int position, @NonNull OrderModel model) {
+    protected void onBindViewHolder(@NonNull orderViewHolder holder, int position, @NonNull homeModel model) {
         holder.customerName.setText(model.getCustomerName());
         holder.itemCount.setText(model.getItemCount());
         String Price = "$" + model.getPrice() ;
@@ -34,7 +36,7 @@ public class OrderAdapter extends FirebaseRecyclerAdapter<OrderModel, OrderAdapt
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(mContext , CustomerOrderHistory.class);
+                Intent intent = new Intent(mContext , CutomerOrderDetail.class);
                 intent.putExtra("phoneNumber" , model.getPhoneNumber());
 
                 mContext.startActivity(intent);
@@ -50,10 +52,11 @@ public class OrderAdapter extends FirebaseRecyclerAdapter<OrderModel, OrderAdapt
     public orderViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_item_orders , parent , false);
         mContext = view.getContext();
+
         return new orderViewHolder(view);
     }
 
-    static class orderViewHolder extends RecyclerView.ViewHolder{
+    class orderViewHolder extends RecyclerView.ViewHolder{
         TextView customerName , price , itemCount;
         ImageView image;
 

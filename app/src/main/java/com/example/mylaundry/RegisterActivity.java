@@ -179,6 +179,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                             userInfo.setFullName(fullName);
                             userInfo.setPassword(password);
                             userInfo.setRole((String) selectedRoleButton.getText());
+                            userInfo.setUid(FirebaseAuth.getInstance().getCurrentUser().getUid());
                             if(selectedRoleButton.getText().toString().equals("Customer")){
                                 databaseReference1.child(phone_number).setValue(userInfo);
                                 Toast.makeText(RegisterActivity.this , "Customer!!" , Toast.LENGTH_SHORT).show();

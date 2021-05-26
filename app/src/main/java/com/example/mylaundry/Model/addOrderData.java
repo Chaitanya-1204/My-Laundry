@@ -2,7 +2,7 @@ package com.example.mylaundry.Model;
 
 public class addOrderData {
     private String customerName;
-    private String phoneNumber;
+    private String phoneNumber, uid;
 
     private String bedSheet , shirts , pants , extra , price ,itemCount;
     private String imageUrl;

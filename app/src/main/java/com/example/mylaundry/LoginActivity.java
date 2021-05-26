@@ -173,7 +173,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                          userData = snapshot.getValue(User.class);
 
                         Intent mainIntent;
+
+
                         if(userData.getRole().equals("Customer")){
+
 
 
                             mainIntent = new Intent(LoginActivity.this, MainActivity.class);
@@ -185,6 +188,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             mainIntent = new Intent(LoginActivity.this, LaundryMainActivity.class);
 
                         }
+                        mainIntent.putExtra("phoneNumber" ,userData.getPhoneNumber() );
                         mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(mainIntent);
                         finish();

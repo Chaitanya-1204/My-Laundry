@@ -2,40 +2,34 @@ package com.example.mylaundry.menu.home;
 
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.mylaundry.Model.User;
 import com.example.mylaundry.R;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
-import java.util.Objects;
-
-
-public class    HomeFragment extends Fragment {
+public class HomeFragment extends Fragment {
 
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
+
     private String mParam1;
     private String mParam2;
+    private  String phone;
 
     public HomeFragment() {
-
+        // Required empty public constructor
     }
-
-
 
     public static HomeFragment newInstance(String param1, String param2) {
         HomeFragment fragment = new HomeFragment();
@@ -46,6 +40,11 @@ public class    HomeFragment extends Fragment {
         return fragment;
     }
 
+
+    private RecyclerView recyclerView;
+    homeAdapter HomeAdapter;
+    DatabaseReference mRef;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,42 +53,38 @@ public class    HomeFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
-    RecyclerView recyclerView;
-
-    DatabaseReference databaseReference, myRef;
-    User userData = new User();
-
-
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
-        recyclerView = view.findViewById(R.id.recycler_active_order);
-        myRef = FirebaseDatabase.getInstance().getReference("Users");
-        myRef.child(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid())
-                .addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        userData = snapshot.getValue(User.class);
-                    }
+        phone = getArguments().getString("phoneNumber");
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
+        mRef = FirebaseDatabase.getInstance().getReference().child("Customer-Active-Order").child(phone);
+        recyclerView   = view.findViewById(R.id.recycler_active_order);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-                    }
-                });
+        FirebaseRecyclerOptions<homeModel> options
+                = new FirebaseRecyclerOptions.Builder<homeModel>()
+                .setQuery(mRef, homeModel.class)
+                .build();
 
-
-        // databaseReference = FirebaseDatabase.getInstance().getReference("Customer-Active-Order").child(userData.getPhoneNumber());
-
-
-
-
+        HomeAdapter = new homeAdapter(options);
+        recyclerView.setAdapter(HomeAdapter);
 
         return view;
     }
+    @Override
+    public void onStart()
+    {
+        super.onStart();
+        HomeAdapter.startListening();
+    }
 
-
+    @Override public void onStop()
+    {
+        super.onStop();
+        HomeAdapter.stopListening();
+    }
 }

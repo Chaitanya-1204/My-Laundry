@@ -14,6 +14,7 @@ import com.example.mylaundry.LaundryPerson.Home.activeOrder;
 import com.example.mylaundry.MainActivity;
 import com.example.mylaundry.Model.addOrderData;
 import com.example.mylaundry.R;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -26,7 +27,7 @@ import java.util.Objects;
 public class OrderDetail extends AppCompatActivity {
     addOrderData orderData = new addOrderData();
     addOrderData completedOrder  = new addOrderData();
-    DatabaseReference databaseReference , databaseReference1;
+    DatabaseReference databaseReference , databaseReference1 , databaseReference2 , databaseReference3;
     TextView customerName , phoneNumber , shirt , pant , bedSheet , extra , price , itemcount;
     String phone;
     Button orderCompleted;
@@ -110,12 +111,18 @@ public class OrderDetail extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 databaseReference1 = FirebaseDatabase.getInstance().getReference("Laundry-Order-History").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
+                databaseReference2 = FirebaseDatabase.getInstance().getReference("Customer-Order-History").child(phone);
+                databaseReference3  = FirebaseDatabase.getInstance().getReference("Customer-Active-Order").child(phone);
                 databaseReference.child(phone).addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         if(snapshot.exists()){
                             completedOrder = snapshot.getValue(addOrderData.class);
                             databaseReference1.child(completedOrder.getPhoneNumber()).setValue(completedOrder);
+                            databaseReference2.child(completedOrder.getPhoneNumber()).setValue(completedOrder);
+                            databaseReference3.child(phone).removeValue();
+
+
                             databaseReference.child(phone).removeValue();
 
                         }
