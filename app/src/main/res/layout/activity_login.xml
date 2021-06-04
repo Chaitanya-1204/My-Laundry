@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_background"
+
+
+    tools:context=".LoginActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/login_image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="25dp"
+                android:transitionName="splash_image"
+                android:src="@drawable/ic_register_hero" />
+
+
+            <TextView
+                android:id="@+id/login_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/bungee"
+                android:textColor="#00695c"
+
+                android:transitionName="splash_text"
+
+
+                android:text="Hello There , Welcome Back"
+                android:textSize="40sp" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/login_slogan_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_black"
+                android:text="Sign In to Account"
+                android:textColor="#00897b"
+                android:textSize="18sp"
+                android:transitionName="sign_text" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="vertical">
+
+                <com.google.android.material.textfield.TextInputLayout
+
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+
+
+                    android:hint="Email"
+
+                    android:textColorHint="@color/black"
+
+
+                    >
+
+                    <EditText
+                        android:id="@+id/login_email"
+                        android:transitionName="email_transition"
+
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/ic_user_small_icon"
+
+                        android:drawablePadding="10dp"
+                        android:textColor="@color/black"
+                        android:inputType="textEmailAddress" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:hint="Password"
+                    app:passwordToggleTint="@color/black"
+                    android:textColorHint="@color/black"
+
+                    app:passwordToggleEnabled="true">
+
+                    <EditText
+                        android:id="@+id/login_password"
+                        android:transitionName="password_transition"
+
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/ic_password"
+                        android:drawablePadding="10dp"
+                        android:textColor="@color/black"
+                        android:inputType="textPassword" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/forgetPassword"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_gravity="right"
+                    android:layout_margin="5dp"
+                    android:background="#00000000"
+                    android:elevation="0dp"
+                    android:textColor="#00897b"
+                    android:text="Forget Password" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/loginButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:transitionName="login_btn_transition"
+                    android:background="#4db6ac"
+                    android:text="Login"
+                    android:textColor="#FFF"
+                    android:textSize="15sp" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/registerButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/bungee"
+                    android:layout_marginTop="20.8dp"
+                    android:layout_marginBottom="30.5dp"
+                    android:gravity="center"
+                    android:lineSpacingExtra="26sp"
+                    android:transitionName="login_signup_transistion"
+                    android:text="@string/don_t_have_and_account_register_here"
+                    android:textColor="#004d40"
+                    android:textSize="18sp"
+                    android:textStyle="normal" />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</RelativeLayout>

@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LaundryPerson.More.LaundryMoreFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_half_rounded2">
+
+        <TextView
+            android:id="@+id/laundry_settings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/nunito_black"
+            android:text="Settings"
+            android:textColor="@color/dark_late_gray"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="20dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:id="@+id/laundry_my_account"
+
+            android:layout_below="@id/laundry_settings"
+            android:layout_marginTop="30dp"
+
+            android:orientation="horizontal"
+            android:background="@color/white_smoke">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="15dp"
+
+                android:src="@drawable/ic_user"
+                android:layout_marginLeft="15dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="My Account"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+
+
+                android:textSize="25sp"
+                android:fontFamily="@font/nunito_black"
+                android:layout_marginLeft="20dp" />
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+
+            android:id="@+id/laundry_faq"
+
+            android:layout_below="@id/laundry_my_account"
+            android:layout_marginTop="30dp"
+
+            android:orientation="horizontal"
+            android:background="@color/white_smoke">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="15dp"
+
+                android:src="@drawable/ic_help"
+                android:layout_marginLeft="15dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text= "FAQ'S"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:textSize="25sp"
+                android:fontFamily="@font/nunito_black"
+                android:layout_marginLeft="20dp" />
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:id="@+id/laundry_contactUs"
+
+            android:layout_below="@id/laundry_faq"
+            android:layout_marginTop="30dp"
+
+            android:orientation="horizontal"
+            android:background="@color/white_smoke">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="15dp"
+
+                android:src="@drawable/ic_call"
+                android:layout_marginLeft="15dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Contact Us"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:textSize="25sp"
+                android:fontFamily="@font/nunito_black"
+                android:layout_marginLeft="20dp" />
+
+
+
+        </LinearLayout>
+
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:id="@+id/laundry_signOut"
+
+            android:layout_below="@id/laundry_contactUs"
+            android:layout_marginTop="30dp"
+
+            android:orientation="horizontal"
+            android:background="@color/white_smoke">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="15dp"
+
+                android:src="@drawable/ic_log_in"
+                android:layout_marginLeft="15dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Sign Out"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:textSize="25sp"
+                android:fontFamily="@font/nunito_black"
+                android:layout_marginLeft="20dp" />
+
+
+
+        </LinearLayout>
+
+
+
+
+
+
+
+    </RelativeLayout>
+
+
+
+
+
+</FrameLayout>

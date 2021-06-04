@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/ic_register_hero"
+                android:transitionName="splash_image" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="-10dp"
+                android:fontFamily="@font/bungee"
+                android:text="WELCOME"
+                android:textColor="#00695c"
+                android:textSize="40sp"
+                android:transitionName="splash_text" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="-15dp"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="@font/nunito_bold"
+                android:text="SignUp to Start a new Journey"
+                android:textColor="#00897b"
+                android:textSize="18sp"
+                android:transitionName="sign_text" />
+
+
+
+            <com.google.android.material.textfield.TextInputLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="10dp"
+
+                android:hint="Full Name"
+                app:errorEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/register_fullName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_user_small_icon"
+                    android:drawablePadding="10dp"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:hint="Email"
+
+                app:errorEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/register_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_mail"
+                    android:drawablePadding="10dp"
+                    android:inputType="textEmailAddress"
+                    android:transitionName="email_transition" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.hbb20.CountryCodePicker
+                android:id="@+id/country_code_picker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="7dp"
+                app:ccp_autoDetectCountry="true"
+                app:ccp_showFlag="true"
+
+                app:ccp_showFullName="true"
+
+                app:ccp_showNameCode="true" />
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+
+                android:hint="Phone Number"
+                app:counterMaxLength="10"
+
+                app:errorEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/register_phoneNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_phone"
+                    android:drawablePadding="10dp"
+                    android:inputType="textPhonetic" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:hint="Password"
+                app:errorEnabled="true"
+
+
+                app:passwordToggleEnabled="true">
+
+                <EditText
+                    android:id="@+id/register_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_password"
+                    android:drawablePadding="10dp"
+                    android:inputType="textPassword"
+                    android:transitionName="password_transition" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:id="@+id/select_role"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                >
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/scrum" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=" Select ROLE"
+                    android:textSize="25sp"
+                    android:textColor="#00695c"
+                    android:textStyle="bold" />
+            </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:id="@+id/radio"
+                    android:orientation="horizontal"
+                    >
+
+
+                    <RadioGroup
+                        android:id="@+id/role"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/role_customer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Customer"
+                            android:layout_marginBottom="8dp"
+                            android:textSize="15sp" />
+
+                        <RadioButton
+                            android:id="@+id/role_laundry"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Laundry Owner"
+                            android:textSize="15sp" />
+
+                    </RadioGroup>
+
+
+
+
+
+
+
+
+            </LinearLayout>
+
+
+            <!-- -->
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/registerUser"
+                android:layout_width="185dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="15dp"
+                android:background="#4db6ac"
+                android:text="Sign UP"
+                android:textColor="@color/white"
+                android:transitionName="login_btn_transition" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/Login"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/bungee"
+                android:gravity="center"
+                android:text="Already Registered? Login"
+                android:textColor="#00695c"
+                android:textSize="20dp"
+                android:transitionName="login_signup_transistion" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

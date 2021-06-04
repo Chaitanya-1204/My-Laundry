@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LaundryPerson.LaundryContactUs"
+    android:orientation="vertical">
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="contact@laundry.com"
+            android:enabled="false"
+            android:padding="25dp"
+            />
+
+        <EditText
+            android:id="@+id/email_subject"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Subject"
+            android:padding="25dp" />
+
+        <EditText
+            android:id="@+id/email_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Message"
+            android:maxLines="4"
+            android:padding="25dp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id = "@+id/email_send"
+            android:layout_width="match_parent"
+            android:layout_height="53dp"
+            android:layout_marginLeft="33dp"
+            android:layout_marginRight="33dp"
+            android:layout_marginTop="38dp"
+            android:background="@drawable/button_gradient"
+            android:text="send"
+            android:gravity="center"
+            android:lineSpacingExtra="34sp"
+            android:textColor="#ffffff"
+            android:textSize="22sp"
+            android:paddingTop="10.5dp"
+            android:paddingBottom="10.5dp"/>
+
+    </LinearLayout>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:lottie_url="https://assets9.lottiefiles.com/packages/lf20_bp1bwvhv.json"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"/>
+
+
+</LinearLayout>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".LaundryPerson.LaundryFaq">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginBottom="40dp"
+            android:src="@drawable/ic_faq">
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/qus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="@color/black"
+            android:background="#80cbc4"
+            android:padding="10dp"
+            android:text=" Q What is Laundry Droid?"
+
+            android:textSize="18sp">
+
+        </TextView>
+
+
+        <TextView
+            android:id="@+id/ans4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:background="@color/white"
+            android:padding="@dimen/browser_actions_context_menu_min_padding"
+            android:text="Laundry Droid app is an initiative from students of MIT ADT UNIVERSIRY to solve problem faced by small laundry providers and their customers "
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/qus1"
+            android:layout_width="wrap_content"
+            android:textColor="@color/black"
+            android:background="#80cbc4"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="sans-serif-medium"
+            android:padding="10dp"
+            android:text=" Q Is this app free?"
+            android:textSize="18sp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/ans1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:background="@color/white"
+            android:padding="@dimen/browser_actions_context_menu_min_padding"
+            android:text="Yes this app is completely free we dont charge any money from our users"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/qus2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:textColor="@color/black"
+            android:background="#80cbc4"
+            android:fontFamily="sans-serif-medium"
+            android:padding="10dp"
+            android:text="Q Is my data safe ?"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/ans2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:background="@color/white"
+            android:padding="@dimen/browser_actions_context_menu_min_padding"
+            android:text="Yes our data is completely safe with us, Privacy of our users  is our key concer"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/qus3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginBottom="20dp"
+            android:textColor="@color/black"
+            android:background="#80cbc4"
+            android:fontFamily="sans-serif-medium"
+            android:padding="10dp"
+            android:text="Q How can i contact you ?"
+            android:textSize="18sp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:layout_marginBottom="20dp"
+            android:textSize="18sp"
+            android:padding="@dimen/browser_actions_context_menu_min_padding"
+            android:id="@+id/ans3"
+            android:text="You can easily contact us in one click details are provided in contact us section"
+            android:textColor="@color/black"/>
+
+
+
+    </LinearLayout>
+
+</ScrollView>

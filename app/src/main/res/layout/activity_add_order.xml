@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/banner2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Add Customer Details"
+
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:textColor="#23203f"
+                android:layout_gravity="center"/>
+
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:drawableStart="@drawable/ic_user_small_icon"
+                    android:drawablePadding="10dp"
+                android:id="@+id/register_customerName"
+                android:drawableLeft="@drawable/user"
+                android:hint="Customer name"
+                android:inputType="textPersonName"
+                android:textColorHint="@color/colorPrimaryDark"
+                android:textSize="22sp"
+                android:padding="10dp"
+                android:fontFamily="sans-serif-light"
+                android:textStyle="normal"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:ems="10"/>
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/register_order_phoneNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:drawableLeft="@drawable/phone_icon"
+                android:ems="10"
+                android:fontFamily="sans-serif-light"
+                android:hint=" Phone Number"
+                android:inputType="phone"
+                android:padding="10dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textColorHint="@color/colorPrimaryDark"
+                android:textSize="22sp"
+                android:textStyle="normal" />
+
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/shirt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_cloth"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:ems="10"
+                android:fontFamily="sans-serif-light"
+                android:hint=" No. of shirts "
+                android:inputType="text|number"
+                android:padding="10dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textColorHint="@color/colorPrimaryDark"
+                android:textSize="22sp"
+                android:textStyle="normal" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/pant"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_long_pants"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:ems="10"
+                android:fontFamily="sans-serif-light"
+                android:inputType="text|number"
+                android:hint=" No. of pants "
+                android:padding="10dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textColorHint="@color/colorPrimaryDark"
+                android:textSize="22sp"
+                android:textStyle="normal" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/bedsheet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_cover"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:ems="10"
+                android:fontFamily="sans-serif-light"
+                android:inputType="text|number"
+                android:hint=" No. of bedsheet "
+                android:padding="10dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textColorHint="@color/colorPrimaryDark"
+                android:textSize="22sp"
+                android:textStyle="normal" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/extra"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:ems="10"
+                android:drawableLeft="@drawable/ic_add"
+                android:fontFamily="sans-serif-light"
+                android:inputType="text|number"
+                android:hint=" No. of extra's "
+                android:padding="10dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textColorHint="@color/colorPrimaryDark"
+                android:textSize="22sp"
+                android:textStyle="normal" />
+
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/placeOrder"
+                android:layout_width="185dp"
+                android:layout_marginTop="25dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="100dp"
+                android:background="@drawable/button_gradient"
+                android:text="@string/title_activity_place__order"
+                android:textColor="@color/white"
+                android:layout_marginLeft="100dp" />
+
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

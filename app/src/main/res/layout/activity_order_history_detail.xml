@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".LaundryPerson.OrderHistoryDetail"
+    android:background="@color/white_smoke">
+
+
+    <TextView
+        android:id="@+id/history_laundry_order_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/nunito_black"
+        android:text="Order Details"
+        android:textColor="#00695c"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:layout_marginLeft="20dp" />
+     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/c1"
+
+        android:layout_below="@id/settings"
+        android:layout_marginTop="30dp"
+
+        android:orientation="horizontal"
+        android:background="@color/white_smoke">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="15dp"
+
+            android:src="@drawable/ic_user" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:textSize="20sp"
+        android:textColor="@color/dark_late_gray"
+        android:id="@+id/history_customer_name"
+
+        android:text="Customer Name"/>
+
+     </LinearLayout>
+     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/c2"
+
+        android:layout_below="@id/settings"
+        android:layout_marginTop="30dp"
+
+        android:orientation="horizontal"
+        android:background="@color/white_smoke">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="15dp"
+
+            android:src="@drawable/ic_phone" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:textSize="20sp"
+        android:textColor="@color/dark_late_gray"
+        android:id="@+id/history_Customer_phone_number"
+        android:text="Phone No"/>
+     </LinearLayout>
+     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/c3"
+
+        android:layout_below="@id/settings"
+        android:layout_marginTop="30dp"
+
+        android:orientation="horizontal"
+        android:background="@color/white_smoke">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="15dp"
+
+            android:src="@drawable/ic_shirt" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:textSize="20sp"
+        android:id="@+id/history_customer_shirt"
+        android:textColor="@color/dark_late_gray"
+        android:text="Shirts"/>
+     </LinearLayout>
+     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/c4"
+
+        android:layout_below="@id/settings"
+        android:layout_marginTop="30dp"
+
+        android:orientation="horizontal"
+        android:background="@color/white_smoke">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="15dp"
+
+            android:src="@drawable/ic_long_pants" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:textSize="20sp"
+        android:id="@+id/history_customer_pant"
+        android:textColor="@color/dark_late_gray"
+
+        android:text="Pants"/>
+     </LinearLayout>
+     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/c5"
+
+        android:layout_below="@id/settings"
+        android:layout_marginTop="30dp"
+
+        android:orientation="horizontal"
+        android:background="@color/white_smoke">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="15dp"
+
+            android:src="@drawable/ic_cover" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:textSize="20sp"
+        android:id="@+id/history_customer_bedsheet"
+        android:textColor="@color/dark_late_gray"
+
+        android:text="Bedsheet"/>
+     </LinearLayout>
+     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/c6"
+
+        android:layout_below="@id/settings"
+        android:layout_marginTop="30dp"
+
+        android:orientation="horizontal"
+        android:background="@color/white_smoke">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="15dp"
+
+            android:src="@drawable/ic_add" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:textSize="20sp"
+        android:id="@+id/history_customer_extra"
+        android:textColor="@color/dark_late_gray"
+        android:text="Extra"/>
+     </LinearLayout>
+     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/c7"
+
+        android:layout_below="@id/settings"
+        android:layout_marginTop="30dp"
+
+        android:orientation="horizontal"
+        android:background="@color/white_smoke">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="15dp"
+
+            android:src="@drawable/ic_active_order" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:textSize="20sp"
+        android:id="@+id/history_customer_itemCount"
+        android:textColor="@color/dark_late_gray"
+        android:text="Item Count"/>
+     </LinearLayout>
+     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/c"
+
+        android:layout_marginTop="30dp"
+
+        android:orientation="horizontal"
+        android:background="@color/white_smoke">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="15dp"
+
+            android:src="@drawable/ic_wallet" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:textSize="20sp"
+        android:id="@+id/history_customer_price"
+        android:textColor="@color/dark_late_gray"
+        android:text="Price"/>
+
+
+
+</LinearLayout>
+
+
+
+
+
+
+
+
+</LinearLayout>
