@@ -22,11 +22,15 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class MyAccount extends AppCompatActivity {
-    TextView userName , email;
+    TextView userName , email , activeOrder , totalOrder;
     EditText fullName , emailId , password , phoneNumber;
-    DatabaseReference databaseReference;
+    DatabaseReference databaseReference , databaseReference2;
     User userData = new User();
     FirebaseDatabase database;
+    String pN;
+    User newUserData = new User();
+    User  userData1 = new User();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +43,15 @@ public class MyAccount extends AppCompatActivity {
         emailId = findViewById(R.id.profile_email_id);
         password  = findViewById(R.id.profile_password);
         phoneNumber = findViewById(R.id.profile_phone_number);
+        activeOrder  = findViewById(R.id.active_order_number);
+        totalOrder =  findViewById(R.id.order_history_number);
+        totalOrder.setText("1");
+        activeOrder.setText("1");
+
+
+
+
+
 
 
 
@@ -56,6 +69,10 @@ public class MyAccount extends AppCompatActivity {
                         emailId.setText(userData.getEmail());
                         password.setText(userData.getPassword());
                         phoneNumber.setText(userData.getPhoneNumber());
+                        pN = userData.getPhoneNumber();
+
+
+
 
                     }
 
@@ -65,6 +82,18 @@ public class MyAccount extends AppCompatActivity {
 
                     }
                 });
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     }

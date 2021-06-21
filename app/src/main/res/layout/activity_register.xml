@@ -144,6 +144,27 @@ x
                     android:drawablePadding="10dp"
                     android:inputType="textPassword" />
             </com.google.android.material.textfield.TextInputLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:id="@+id/select_role"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                >
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/scrum" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=" Select ROLE"
+                    android:textSize="25sp"
+                    android:textColor="#00695c"
+                    android:textStyle="bold" />
+            </LinearLayout>
 
 
             <LinearLayout
@@ -151,12 +172,8 @@ x
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_marginStart="5dp">
-                
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="ROLE"
-                    android:textSize="25sp"/>
+
+
                 
                 <RadioGroup
                     android:layout_width="fill_parent"

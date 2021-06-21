@@ -7,18 +7,27 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyLaundry">
-        <activity android:name=".CustomerOrderHistory"></activity>
-        <activity android:name=".CutomerOrderDetail" />
-        <activity android:name=".LaundryPerson.OrderHistoryDetail" />
-        <activity android:name=".LaundryPerson.OrderDetail" />
-        <activity android:name=".CustomerContactUs" />
-        <activity android:name=".CustomerFaq" />
-        <activity android:name=".LaundryPerson.AddOrder" />
+        <activity android:name=".CustomerOrderHistory"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".CutomerOrderDetail"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".LaundryPerson.OrderHistoryDetail"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+        <activity android:name=".LaundryPerson.OrderDetail"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+
+        <activity android:name=".CustomerContactUs"
+            android:theme="@style/Theme.Design.NoActionBar"/>
+        <activity android:name=".CustomerFaq"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".LaundryPerson.AddOrder"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity
             android:name=".LaundryPerson.LaundryContactUs"
             android:theme="@style/Theme.Design.NoActionBar" />
@@ -45,8 +54,8 @@
         </activity>
         <activity
             android:name=".MyAccount"
-            android:label="My Profile"
-            android:theme="@style/Theme.Design.DarkActionBar" />
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"
+            />
         <activity
             android:name=".MainActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />

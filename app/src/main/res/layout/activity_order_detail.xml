@@ -17,125 +17,288 @@
         android:layout_marginTop="20dp"
         android:fontFamily="@font/nunito_black"
         android:text="Order Details"
-        android:textColor="@color/dark_late_gray"
         android:textSize="25dp"
+        android:textColor="#00695c"
         android:textStyle="bold"
         android:layout_marginLeft="20dp" />
-
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
+        android:id="@+id/c"
 
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:textSize="20sp"
-        android:textColor="@color/dark_late_gray"
-        android:id="@+id/customer_name"
+        android:layout_below="@id/settings"
+        android:layout_marginTop="10dp"
 
-        android:text="Customer Name"/>
+        android:orientation="horizontal"
+        android:background="@color/white_smoke">
 
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="15dp"
 
+            android:src="@drawable/ic_user" />
 
-    <TextView
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:textSize="20sp"
+            android:textColor="@color/dark_late_gray"
+            android:id="@+id/customer_name"
+
+            android:text="Customer Name"/>
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
+        android:id="@+id/p"
 
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:textSize="20sp"
-        android:textColor="@color/dark_late_gray"
-        android:id="@+id/Customer_phone_number"
-        android:text="Phone No"/>
+        android:layout_below="@id/settings"
+        android:layout_marginTop="10dp"
 
-    <TextView
+        android:orientation="horizontal"
+        android:background="@color/white_smoke">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="15dp"
+
+            android:src="@drawable/phone_icon" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:textSize="20sp"
+            android:textColor="@color/dark_late_gray"
+            android:id="@+id/Customer_phone_number"
+            android:text="Phone No"/>
+    </LinearLayout>
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
+        android:id="@+id/my_account"
 
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:textSize="20sp"
-        android:id="@+id/customer_shirt"
-        android:textColor="@color/dark_late_gray"
-        android:text="Shirts"/>
+        android:layout_below="@id/settings"
+        android:layout_marginTop="10dp"
 
-    <TextView
+        android:orientation="horizontal"
+        android:background="@color/white_smoke">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="15dp"
+
+            android:src="@drawable/ic_shirt" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:textSize="20sp"
+            android:id="@+id/customer_shirt"
+            android:textColor="@color/dark_late_gray"
+            android:text="Shirts"/>
+    </LinearLayout>
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
+        android:id="@+id/s"
 
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:textSize="20sp"
-        android:id="@+id/customer_pant"
-        android:textColor="@color/dark_late_gray"
+        android:layout_below="@id/settings"
+        android:layout_marginTop="10dp"
 
-        android:text="Pants"/>
+        android:orientation="horizontal"
+        android:background="@color/white_smoke">
 
-    <TextView
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="15dp"
+
+            android:src="@drawable/ic_long_pants" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:textSize="20sp"
+            android:id="@+id/customer_pant"
+            android:textColor="@color/dark_late_gray"
+
+            android:text="Pants"/>
+    </LinearLayout>
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
+        android:id="@+id/b"
 
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:textSize="20sp"
-        android:id="@+id/customer_bedsheet"
-        android:textColor="@color/dark_late_gray"
+        android:layout_below="@id/settings"
+        android:layout_marginTop="10dp"
 
-        android:text="Bedsheet"/>
+        android:orientation="horizontal"
+        android:background="@color/white_smoke">
 
-    <TextView
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="15dp"
+
+            android:src="@drawable/ic_cover" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:textSize="20sp"
+            android:id="@+id/customer_bedsheet"
+            android:textColor="@color/dark_late_gray"
+
+            android:text="Bedsheet"/>
+    </LinearLayout>
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
+        android:id="@+id/t"
 
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:textSize="20sp"
-        android:id="@+id/customer_extra"
-        android:textColor="@color/dark_late_gray"
-        android:text="Extra"/>
-    <TextView
+        android:layout_below="@id/settings"
+        android:layout_marginTop="10dp"
+
+        android:orientation="horizontal"
+        android:background="@color/white_smoke">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="15dp"
+
+            android:src="@drawable/ic_add" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:textSize="20sp"
+            android:id="@+id/customer_extra"
+            android:textColor="@color/dark_late_gray"
+            android:text="Extra"/>
+    </LinearLayout>
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
+        android:id="@+id/e"
 
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:textSize="20sp"
-        android:id="@+id/customer_itemCount"
-        android:textColor="@color/dark_late_gray"
-        android:text="Item Count"/>
-    <TextView
+        android:layout_below="@id/settings"
+        android:layout_marginTop="10dp"
+
+        android:orientation="horizontal"
+        android:background="@color/white_smoke">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="15dp"
+
+            android:src="@drawable/ic_active_order" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:textSize="20sp"
+            android:id="@+id/customer_itemCount"
+            android:textColor="@color/dark_late_gray"
+            android:text="Item Count"/>
+    </LinearLayout>
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
+        android:id="@+id/i"
 
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:textSize="20sp"
-        android:id="@+id/customer_price"
-        android:textColor="@color/dark_late_gray"
-        android:text="Price"/>
+        android:layout_below="@id/settings"
+        android:layout_marginTop="10dp"
 
-    <androidx.appcompat.widget.AppCompatButton
+        android:orientation="horizontal"
+        android:background="@color/white_smoke">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="15dp"
+
+            android:src="@drawable/ic_wallet" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:textSize="20sp"
+            android:id="@+id/customer_price"
+            android:textColor="@color/dark_late_gray"
+            android:text="Price"/>
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Order Completed"
-        android:id="@+id/order_completed"
-        android:layout_margin="20dp"
-        android:textColor="@color/white_smoke"
-        android:background="#000000"/>
+        android:layout_height="60dp"
+        android:id="@+id/i2"
+        android:layout_below="@id/settings"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal"
+        android:background="@color/white_smoke">
 
-
-
-
-
-
-
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Order Completed"
+            android:id="@+id/order_completed"
+            android:layout_margin="10dp"
+            android:textColor="@color/white_smoke"
+            android:background="#4db6ac"
+            />
+    </LinearLayout>
 
 
 
